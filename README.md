@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# AidSys-Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**AisSys** is our project which basically takes any institution and all of its assets to cloud.
+Its digitizing the entire institution to reduce the operation cost and h
+ence enabling one-and-all present in the institution to make optimum use of the available resources.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+1. [Visual Studio Code](https://code.visualstudio.com)[**Recommanded**]
+2. [nodejs](https://nodejs.org/en/)
 
-### `npm start`
+3. Extension for Visual Studio Code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   1. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Code Formatter
+   2. [Auto import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport): For updating import statement
+   3. [ESLing](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+   4. [Simple React Snippets](https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   git clone git@github.com:SusheelThapa/AidSys-Front-End.git
+   ```
 
-### `npm run build`
+2. Install the node modules
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+   npm i
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Running the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```sh
+   npm start
+   ```
 
-### `npm run eject`
+   _The project will run at PORT 5000_
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Guidelines
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+These set of rules are to be taken into consideration while doing this project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I cannot explain why this is useful but when you will continue, you will know your self.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Project Guidelines
 
-## Learn More
+1. **Class name** should be into **PascalCase**.
+2. **Variable** and **Function name** should be in **camelCase**.
+3. Before commiting any changes, make sure to format the code with **Prettier**.
+4. The variable name should be chosen such that there won't be confusion on it name and for what it is created.
+5. The **files** and **directories name** should be in **lowercase**, space shouldn't be used(use underscore(`_`))
+6. The component name  file must be in in **PascalCase** 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Git and Github Guidelines
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Git
 
-### Code Splitting
+1. **commit** every small detail or change possible.
+2. The commit can be divided into two section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   - Title
+   - Description
 
-### Analyzing the Bundle Size
+   _If you have change alot so that only **Title** is not able to describe it
+   you can write detail description part_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Make sure that after reading the commit, reader can get brief info about your changes.
 
-### Making a Progressive Web App
+#### Github
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. It is highly encourage not to upload your file directly using **Github** instead use **Git**
+2. You can use discussion section
 
-### Advanced Configuration
+   - If you have any doubt
+   - You want to implement something but you didnot find how to implement that
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   _This will be helpful if you are working in Open Source Project
+   So, why not to pratice via this project_
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. If you find any thing that is usual while running project, you can create issue and **try avoiding to say it using DM**

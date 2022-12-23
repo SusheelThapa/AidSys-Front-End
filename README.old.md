@@ -1,1 +1,0 @@
-# AidSys-Front-End
