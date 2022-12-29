@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const sendLoginDetails = async (username, password) => {
+export const sendLoginDetails = async (username, password) => {
+  /**
+   * Send post request to the backend server with login details
+   */
   const res = await axios.post("http://localhost:5000/login", {
     username: username,
     password: password,
@@ -8,5 +11,3 @@ const sendLoginDetails = async (username, password) => {
 
   return res.data;
 };
-
-export default sendLoginDetails;

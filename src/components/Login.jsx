@@ -1,17 +1,17 @@
 import React, { useRef } from "react";
 
-import sendLoginDetails from "../services/sendPOSTReq.js";
-import saveToken from "../services/token.js";
+import {sendLoginDetails} from "../services/sendPOSTReq.js";
+import { saveToken } from "../services/token.js";
 
 import "../assets/css/login.css";
 
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
-    /**
-     * username and password is used to keep track of value 
-     * inside username and password field.
-     */
+  /**
+   * username and password is used to keep track of value
+   * inside username and password field.
+   */
   const username = useRef();
   const password = useRef();
 
