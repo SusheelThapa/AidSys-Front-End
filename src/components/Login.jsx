@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "../assets/css/login.css";
 
 import loginPhoneImage from "../assets/img/login-phone.svg";
+
 const Login = () => {
+  const username = useRef();
+  const password = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form has been submitted");
+  };
+
   return (
     <div id="login">
       <section className="side">
@@ -19,13 +28,13 @@ const Login = () => {
             AidSys
           </p>
 
-          <form className="login-form">
+          <form onSubmit={handleSubmit} className="login-form">
             <div className="form-control">
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" ref={username} />
               <i className="fas fa-user"></i>
             </div>
             <div className="form-control">
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" ref={password} />
               <i className="fas fa-lock"></i>
             </div>
 
