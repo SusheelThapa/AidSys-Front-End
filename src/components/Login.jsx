@@ -1,16 +1,37 @@
 import React, { useRef } from "react";
 
+import sendLoginDetails from "../services/sendPOSTReq.js";
+import saveToken from "../services/token.js";
+
 import "../assets/css/login.css";
 
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
+    /**
+     * username and password is used to keep track of value 
+     * inside username and password field.
+     */
   const username = useRef();
   const password = useRef();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    /**
+     * prevent default behaviour of submission
+     * send the login data to server
+     * retrieve the token
+     * save the token
+     */
     event.preventDefault();
-    console.log("Form has been submitted");
+
+    const response = await sendLoginDetails(
+      username.current.value,
+      password.current.value
+    );
+
+    const { token } = response;
+
+    saveToken(token);
   };
 
   return (
