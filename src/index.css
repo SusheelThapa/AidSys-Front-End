@@ -4,4 +4,26 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     color: #303433;
+    background-color: rgb(220, 221, 221);
+
+}
+.box{
+  width:280px;
+  position:absolute;
+  left:12%;
+  top:50%;
+  transform: translate(-50%,-50%)
+}
+.navbar, .nav-item, .nav-link{
+  background-color: rgb(255, 255, 255);
+}
+.d-grid,.transparent-bg{
+  background-color: transparent;
+}
+.badge{
+  position: absolute;
+  right: 20px;
+}
+.bold{
+  font-weight: bolder;
 }
