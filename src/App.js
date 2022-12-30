@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Sidebar from "./components/Sidebar";
+import Workspace from "./components/Workspace";
+
+import { getToken } from "./services/token";
 
 function App() {
+  const [token, setToken] = useState();
+
+  useEffect(() => {
+    /**
+     * This useEffect get the token store in local storage and
+     * set the value of token
+     */
+    const tokenLocal = getToken();
+
+    setToken(tokenLocal);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    /**
+     * Token can be considered as identity of user.
+     * If token is present in localStorage then we will show Header SideBar Workspace
+     * If token is not present in localStorage then we will show Login page
+     */
+    <React.Fragment>
+      {token != null && (
+        <div>
+          <Header />
+          <Sidebar />
+          <Workspace />
+        </div>
+      )}
+
+      {token == null && <Login />}
+    </React.Fragment>
   );
 }
 
