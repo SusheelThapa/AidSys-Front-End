@@ -19,8 +19,6 @@ const Login = () => {
     /**
      * prevent default behaviour of submission
      * send the login data to server
-     * retrieve the token
-     * save the token
      */
     event.preventDefault();
 
@@ -29,14 +27,18 @@ const Login = () => {
       password.current.value
     );
 
-    const { token } = response;
+    const { success, error, token } = response;
 
-    saveToken(token);
+    if (success) {
+      saveToken(token);
 
-    /**
-     * Reloading the window after token has been set in localStorage
-     */
-    window.location.reload();
+      window.location.reload();
+    } else if (error) {
+      console.error(error);
+      /**
+       * In the web page show, the error message
+       */
+    }
   };
 
   return (
