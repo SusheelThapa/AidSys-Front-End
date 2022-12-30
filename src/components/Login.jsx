@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import {sendLoginDetails} from "../services/sendPOSTReq.js";
+import { sendLoginDetails } from "../services/sendPOSTReq.js";
 import { saveToken } from "../services/token.js";
 
 import "../assets/css/login.css";
@@ -32,6 +32,11 @@ const Login = () => {
     const { token } = response;
 
     saveToken(token);
+
+    /**
+     * Reloading the window after token has been set in localStorage
+     */
+    window.location.reload();
   };
 
   return (
