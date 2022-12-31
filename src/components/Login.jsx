@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { sendLoginDetails } from "../services/request.js";
 import { doesTokenExist, saveToken } from "../services/token.js";
 
+import Form from "./common/Form.jsx";
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
@@ -21,24 +22,16 @@ const Login = () => {
     }
   });
 
-  /**
-   * username and password is used to keep track of value
-   * inside username and password field.
-   */
-  const username = useRef();
-  const password = useRef();
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, data) => {
     /**
      * prevent default behaviour of submission
      * send the login data to server
      */
     event.preventDefault();
 
-    const response = await sendLoginDetails(
-      username.current.value,
-      password.current.value
-    );
+    const { username, password } = data;
+
+    const response = await sendLoginDetails(username, password);
 
     const { success, error, token } = response;
 
@@ -52,6 +45,11 @@ const Login = () => {
        */
     }
   };
+
+  const inputFields = [
+    { name: "Username", type: "text" },
+    { name: "Password", type: "password" },
+  ];
 
   return (
     <div id="login">
@@ -68,18 +66,8 @@ const Login = () => {
             AidSys
           </p>
 
-          <form onSubmit={handleSubmit} className="login-signup-form">
-            <div className="form-control">
-              <input type="text" placeholder="Username" ref={username} />
-              <i className="fas fa-user"></i>
-            </div>
-            <div className="form-control">
-              <input type="password" placeholder="Password" ref={password} />
-              <i className="fas fa-lock"></i>
-            </div>
+          <Form  formType="Login" onSubmit={handleSubmit} inputFields={inputFields} />
 
-            <button className="submit">Login</button>
-          </form>
           <Link to={`/signup`}>Don't have one? Create one</Link>
         </div>
       </section>

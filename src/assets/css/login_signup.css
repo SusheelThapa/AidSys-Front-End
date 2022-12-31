@@ -54,7 +54,7 @@ section.side {
     color: #696969;
 }
 
-.login-signup-form {
+.form {
     width: 100%;
     display: flex;
     flex-direction: column;

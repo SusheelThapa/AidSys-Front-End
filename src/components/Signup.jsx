@@ -1,10 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { sendSignupDetails } from "../services/request";
 import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
+import Form from "./common/Form";
 
 const Signup = () => {
   /**
@@ -21,36 +22,36 @@ const Signup = () => {
     }
   });
 
-  /**
-   * username, password, college, email and phone is used to keep track of value
-   * of different input field.
-   */
-  const username = useRef();
-  const password = useRef();
-  const college = useRef();
-  const email = useRef();
-  const phone = useRef();
+  const inputFields = [
+    { name: "Username", type: "text" },
+    { name: "College", type: "text" },
+    { name: "Phone", type: "text" },
+    { name: "Email", type: "email" },
+    { name: "Password", type: "password" },
+  ];
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, data) => {
     /**
      * prevent default behaviour of submission
      * send the login data to server
      */
     event.preventDefault();
 
+    const { username, password, college, email, phone } = data;
+
     const response = await sendSignupDetails(
-      username.current.value,
-      password.current.value,
-      college.current.value,
-      email.current.value,
-      phone.current.value
+      username,
+      password,
+      college,
+      email,
+      phone
     );
 
     const { success, error, token } = response;
 
     if (success) {
       saveToken(token);
-      
+
       navigate("/");
     } else if (error) {
       console.error(error);
@@ -74,30 +75,11 @@ const Signup = () => {
             Please, provide below credential to create account in AidSys
           </p>
 
-          <form onSubmit={handleSubmit} className="login-signup-form">
-            <div className="form-control">
-              <input type="text" placeholder="Username" ref={username} />
-              <i className="fas fa-user"></i>
-            </div>
-            <div className="form-control">
-              <input type="text" placeholder="College" ref={college} />
-              <i className="fas fa-graduation-cap"></i>
-            </div>
-            <div className="form-control">
-              <input type="text" placeholder="Email" ref={email} />
-              <i className="fas fa-envelope"></i>
-            </div>
-            <div className="form-control">
-              <input type="text" placeholder="Phone" ref={phone} />
-              <i className="fas fa-mobile"></i>
-            </div>
-            <div className="form-control">
-              <input type="password" placeholder="Password" ref={password} />
-              <i className="fas fa-lock"></i>
-            </div>
-
-            <button className="submit">Signup</button>
-          </form>
+          <Form
+            formType="Signup"
+            onSubmit={handleSubmit}
+            inputFields={inputFields}
+          />
           <Link to={"/login"}>Have one? Login</Link>
         </div>
       </section>
