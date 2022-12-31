@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import phoneImage from "../assets/img/login-phone.svg";
+import { sendSignupDetails } from "../services/request";
+import { saveToken } from "../services/token";
 
 const Signup = () => {
   /**
@@ -21,7 +23,25 @@ const Signup = () => {
      */
     event.preventDefault();
 
-    console.log(username.current.value);
+    const response = await sendSignupDetails(
+      username.current.value,
+      password.current.value,
+      college.current.value,
+      email.current.value,
+      phone.current.value
+    );
+
+    const { success, error, token } = response;
+
+    if (success) {
+      saveToken(token);
+      window.location.href = "http://localhost:3000/";
+    } else if (error) {
+      console.error(error);
+      /**
+       * In the web page show, the error message
+       */
+    }
   };
 
   return (
