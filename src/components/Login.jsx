@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-import { sendLoginDetails } from "../services/sendPOSTReq.js";
+import { sendLoginDetails } from "../services/request.js";
 import { saveToken } from "../services/token.js";
 
 import loginPhoneImage from "../assets/img/login-phone.svg";
