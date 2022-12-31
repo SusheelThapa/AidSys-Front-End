@@ -19,11 +19,16 @@ import "./assets/css/login_signup.css";
  * Setting up React Router
  */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Signup from "./components/Signup";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 ]);
 
