@@ -1,9 +1,5 @@
 import React, { useRef } from "react";
-
-import Form from "./common/Form.jsx";
-
-import { sendLoginDetails } from "../services/sendPOSTReq.js";
-import { saveToken } from "../services/token.js";
+import { Link } from "react-router-dom";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
@@ -66,6 +62,7 @@ const Signup = () => {
 
             <button className="submit">Signup</button>
           </form>
+          <Link to={"/"}>Have one? Login</Link>
         </div>
       </section>
     </div>

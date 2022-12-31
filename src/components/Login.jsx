@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import { sendLoginDetails } from "../services/sendPOSTReq.js";
 import { saveToken } from "../services/token.js";
@@ -50,7 +51,8 @@ const Login = () => {
           <p className="title">Welcome back!</p>
           <div className="separator"></div>
           <p className="welcome-message">
-            Please, provide login credential to create account in AidSys
+            Please, provide login credential to proceed and have access to
+            AidSys
           </p>
 
           <form onSubmit={handleSubmit} className="login-signup-form">
@@ -65,6 +67,7 @@ const Login = () => {
 
             <button className="submit">Login</button>
           </form>
+          <Link to={`/signup`}>Don't have one? Create one</Link>
         </div>
       </section>
     </div>

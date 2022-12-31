@@ -63,7 +63,7 @@ section.side {
 .form-control {
     width: 100%;
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 input,
@@ -98,7 +98,9 @@ input:focus~i {
 button.submit {
     color: #fff;
     padding: 14px 64px;
-    margin: 32px auto;
+    margin: 20px auto;
+    
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -109,6 +111,11 @@ button.submit {
 
 button.submit:hover {
     opacity: 0.9;
+}
+
+a {
+    font-size: 1rem;
+    text-decoration: none;
 }
 
 /* ----  Responsiveness   ----  */
