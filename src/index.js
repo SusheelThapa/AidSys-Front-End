@@ -20,6 +20,7 @@ import "./assets/css/login_signup.css";
  */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
