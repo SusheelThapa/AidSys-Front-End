@@ -1,4 +1,5 @@
-#login {
+#login,
+#signup {
     min-height: 100vh;
     width: 100%;
     display: grid;
@@ -41,7 +42,8 @@ section.side {
     width: 150px;
     height: 4px;
     background-color: #843bc7;
-    margin: 24px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .welcome-message {
@@ -52,7 +54,7 @@ section.side {
     color: #696969;
 }
 
-.login-form {
+.login-signup-form {
     width: 100%;
     display: flex;
     flex-direction: column;

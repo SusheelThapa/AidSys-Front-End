@@ -3,8 +3,6 @@ import React, { useRef } from "react";
 import { sendLoginDetails } from "../services/sendPOSTReq.js";
 import { saveToken } from "../services/token.js";
 
-import "../assets/css/login.css";
-
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
@@ -52,11 +50,10 @@ const Login = () => {
           <p className="title">Welcome back!</p>
           <div className="separator"></div>
           <p className="welcome-message">
-            Please, provide login credential to proceed and have access to
-            AidSys
+            Please, provide login credential to create account in AidSys
           </p>
 
-          <form onSubmit={handleSubmit} className="login-form">
+          <form onSubmit={handleSubmit} className="login-signup-form">
             <div className="form-control">
               <input type="text" placeholder="Username" ref={username} />
               <i className="fas fa-user"></i>
