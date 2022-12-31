@@ -1,11 +1,26 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import { sendSignupDetails } from "../services/request";
+import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
-import { sendSignupDetails } from "../services/request";
-import { saveToken } from "../services/token";
 
 const Signup = () => {
+  /**
+   * navigate for redirection purpose
+   */
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    /**
+     * Redirect to homepage if token exist
+     */
+    if (doesTokenExist()) {
+      navigate("/");
+    }
+  });
+
   /**
    * username, password, college, email and phone is used to keep track of value
    * of different input field.
@@ -35,7 +50,8 @@ const Signup = () => {
 
     if (success) {
       saveToken(token);
-      window.location.href = "http://localhost:3000/";
+      
+      navigate("/");
     } else if (error) {
       console.error(error);
       /**
@@ -82,7 +98,7 @@ const Signup = () => {
 
             <button className="submit">Signup</button>
           </form>
-          <Link to={"/"}>Have one? Login</Link>
+          <Link to={"/login"}>Have one? Login</Link>
         </div>
       </section>
     </div>

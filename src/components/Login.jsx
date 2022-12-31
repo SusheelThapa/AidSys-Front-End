@@ -1,12 +1,26 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import { sendLoginDetails } from "../services/request.js";
-import { saveToken } from "../services/token.js";
+import { doesTokenExist, saveToken } from "../services/token.js";
 
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
+  /**
+   * navigate for redirection purpose
+   */
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    /**
+     * Redirect to homepage if token exist
+     */
+    if (doesTokenExist()) {
+      navigate("/");
+    }
+  });
+
   /**
    * username and password is used to keep track of value
    * inside username and password field.
@@ -30,8 +44,7 @@ const Login = () => {
 
     if (success) {
       saveToken(token);
-
-      window.location.reload();
+      navigate("/");
     } else if (error) {
       console.error(error);
       /**
