@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
@@ -75,7 +75,9 @@ const Signup = () => {
         formType="Signup"
         onSubmit={handleSubmit}
         inputFields={inputFields}
-      />
+      >
+        <Link to={`/login`}>Have one? Log in</Link>
+      </FormContainer>
     </div>
   );
 };

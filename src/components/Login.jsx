@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
 import { sendLoginDetails } from "../services/request.js";
 import { doesTokenExist, saveToken } from "../services/token.js";
 
-import loginPhoneImage from "../assets/img/login-phone.svg";
+import phoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
   /**
@@ -55,7 +55,7 @@ const Login = () => {
   return (
     <div id="login">
       <section className="side">
-        <img src={loginPhoneImage} alt="" />
+        <img src={phoneImage} alt="" />
       </section>
 
       <FormContainer
@@ -65,7 +65,9 @@ const Login = () => {
         formType="Login"
         onSubmit={handleSubmit}
         inputFields={inputFields}
-      />
+      >
+        <Link to={`/signup`}>Don't have one? Create one</Link>
+      </FormContainer>
     </div>
   );
 };

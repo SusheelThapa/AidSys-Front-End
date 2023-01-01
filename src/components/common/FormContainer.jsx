@@ -3,10 +3,10 @@ import React from "react";
 import Form from "./Form.jsx";
 
 const FormContainer = (props) => {
-  const { title, message, formType, onSubmit, inputFields } = props;
-  
+  const { title, message, formType, onSubmit, inputFields, children } = props;
+
   return (
-    <section className="main">
+    <section>
       <div className="form-container">
         <p className="form-container-title">{title}</p>
         <div className="form-container-separator"></div>
@@ -17,6 +17,7 @@ const FormContainer = (props) => {
           onSubmit={onSubmit}
           inputFields={inputFields}
         />
+        {children}
       </div>
     </section>
   );
