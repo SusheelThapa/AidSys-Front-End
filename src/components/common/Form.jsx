@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+var state=false;
 const Form = (props) => {
   const { formType, onSubmit, inputFields } = props;
 
@@ -9,6 +9,15 @@ const Form = (props) => {
     /**
      * Change the icon
      */
+    console.log("this is clicked.")
+    if(state){
+      document.getElementById("password-reveal").setAttribute("type","password");
+      state=false;
+    }
+    else{
+      document.getElementById("password-reveal").setAttribute("type","text");
+      state=true;
+    }
   };
 
   return (
@@ -38,7 +47,7 @@ const Form = (props) => {
 
               {field.type === "password" && (
                 <React.Fragment>
-                  <input type="password" placeholder="Password" />
+                  <input type="password" placeholder="Password" id="password-reveal"/>
                   <FontAwesomeIcon onClick={revealPassword} icon={field.icon} />
                 </React.Fragment>
               )}
