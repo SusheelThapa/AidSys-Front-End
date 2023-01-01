@@ -22,7 +22,7 @@ section.side {
     max-width: 50%;
 }
 
-.login-container {
+.form-container {
     max-width: 450px;
     padding: 24px;
     display: flex;
@@ -30,7 +30,7 @@ section.side {
     align-items: center;
 }
 
-.title {
+.form-container-title {
     text-transform: uppercase;
     font-size: 3em;
     font-weight: bold;
@@ -38,7 +38,7 @@ section.side {
     letter-spacing: 1px;
 }
 
-.separator {
+.form-container-separator {
     width: 150px;
     height: 4px;
     background-color: #843bc7;
@@ -46,7 +46,7 @@ section.side {
     margin-bottom: 20px;
 }
 
-.welcome-message {
+.form-container-welcome-message {
     text-align: center;
     font-size: 1.1em;
     line-height: 28px;

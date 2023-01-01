@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import FormContainer from "./common/FormContainer.jsx";
 
 import { sendSignupDetails } from "../services/request";
 import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
-import Form from "./common/Form";
 
 const Signup = () => {
   /**
@@ -67,22 +68,14 @@ const Signup = () => {
         <img src={phoneImage} alt="" />
       </section>
 
-      <section className="main">
-        <div className="login-container">
-          <p className="title">Signup</p>
-          <div className="separator"></div>
-          <p className="welcome-message">
-            Please, provide below credential to create account in AidSys
-          </p>
-
-          <Form
-            formType="Signup"
-            onSubmit={handleSubmit}
-            inputFields={inputFields}
-          />
-          <Link to={"/login"}>Have one? Login</Link>
-        </div>
-      </section>
+      <FormContainer
+        title="Welcome"
+        message="Please, provide below credential to create account in AidSys
+        "
+        formType="Signup"
+        onSubmit={handleSubmit}
+        inputFields={inputFields}
+      />
     </div>
   );
 };

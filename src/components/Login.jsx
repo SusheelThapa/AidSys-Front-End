@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import FormContainer from "./common/FormContainer.jsx";
 
 import { sendLoginDetails } from "../services/request.js";
 import { doesTokenExist, saveToken } from "../services/token.js";
 
-import Form from "./common/Form.jsx";
 import loginPhoneImage from "../assets/img/login-phone.svg";
 
 const Login = () => {
@@ -57,24 +58,14 @@ const Login = () => {
         <img src={loginPhoneImage} alt="" />
       </section>
 
-      <section className="main">
-        <div className="login-container">
-          <p className="title">Welcome back!</p>
-          <div className="separator"></div>
-          <p className="welcome-message">
-            Please, provide login credential to proceed and have access to
-            AidSys
-          </p>
-
-          <Form
-            formType="Login"
-            onSubmit={handleSubmit}
-            inputFields={inputFields}
-          />
-
-          <Link to={`/signup`}>Don't have one? Create one</Link>
-        </div>
-      </section>
+      <FormContainer
+        title="Welcome Back"
+        message="Please, provide login credential to proceed and have access to
+            AidSys"
+        formType="Login"
+        onSubmit={handleSubmit}
+        inputFields={inputFields}
+      />
     </div>
   );
 };
