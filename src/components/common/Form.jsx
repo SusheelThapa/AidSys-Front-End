@@ -4,6 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Form = (props) => {
   const { formType, onSubmit, inputFields } = props;
+
+  const revealPassword = () => {
+    /**
+     * Change the icon
+     */
+  };
+
   return (
     <form
       onSubmit={(event) => {
@@ -20,15 +27,23 @@ const Form = (props) => {
     >
       {inputFields.map((field) => {
         return (
-          <div key={field.name} className="form-control">
-            <input
-              type={field.type}
-              placeholder={field.name}
-              ref={field.ref}
-              name={field.name}
-            />
-            <FontAwesomeIcon icon={field.icon} />
-          </div>
+          <React.Fragment>
+            <div key={field.name} className="form-control">
+              {field.type !== "password" && (
+                <React.Fragment>
+                  <input type={field.type} placeholder={field.name} />
+                  <FontAwesomeIcon icon={field.icon} />
+                </React.Fragment>
+              )}
+
+              {field.type === "password" && (
+                <React.Fragment>
+                  <input type="password" placeholder="Password" />
+                  <FontAwesomeIcon onClick={revealPassword} icon={field.icon} />
+                </React.Fragment>
+              )}
+            </div>
+          </React.Fragment>
         );
       })}
       <button className="submit">{formType}</button>

@@ -49,7 +49,7 @@ const Login = () => {
 
   const inputFields = [
     { name: "Username", type: "text", icon: "fa-solid fa-user" },
-    { name: "Password", type: "password", icon: "fa-solid fa-lock" },
+    { name: "Password", type: "password", icon: "fa-solid fa-eye-slash" },
   ];
 
   return (

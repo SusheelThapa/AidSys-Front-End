@@ -28,7 +28,7 @@ const Signup = () => {
     { name: "College", type: "text", icon: "fa-solid fa-graduation-cap" },
     { name: "Phone", type: "text", icon: "fa-solid fa-phone" },
     { name: "Email", type: "email", icon: "fa-solid fa-envelope" },
-    { name: "Password", type: "password", icon: "fa-solid fa-lock" },
+    { name: "Password", type: "password", icon: "fa-solid fa-eye-slash" },
   ];
 
   const handleSubmit = async (event, data) => {
