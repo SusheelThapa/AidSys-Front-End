@@ -1,23 +1,18 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-var state=false;
-const Form = (props) => {
-  const { formType, onSubmit, inputFields } = props;
+
+const Form = ({ formType, onSubmit, inputFields }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const passwordInput = useRef();
 
   const revealPassword = () => {
-    /**
-     * Change the icon
-     */
-    console.log("this is clicked.")
-    if(state){
-      document.getElementById("password-reveal").setAttribute("type","password");
-      state=false;
-    }
-    else{
-      document.getElementById("password-reveal").setAttribute("type","text");
-      state=true;
-    }
+    !showPassword === true
+      ? (passwordInput.current.type = "text")
+      : (passwordInput.current.type = "password");
+
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -36,23 +31,32 @@ const Form = (props) => {
     >
       {inputFields.map((field) => {
         return (
-          <React.Fragment>
-            <div key={field.name} className="form-control">
-              {field.type !== "password" && (
-                <React.Fragment>
-                  <input type={field.type} placeholder={field.name} />
-                  <FontAwesomeIcon icon={field.icon} />
-                </React.Fragment>
-              )}
+          <div key={field.name} className="form-control">
+            {field.type !== "password" && (
+              <React.Fragment>
+                <input type={field.type} placeholder={field.name} />
+                <FontAwesomeIcon icon={field.icon} />
+              </React.Fragment>
+            )}
 
-              {field.type === "password" && (
-                <React.Fragment>
-                  <input type="password" placeholder="Password" id="password-reveal"/>
-                  <FontAwesomeIcon onClick={revealPassword} icon={field.icon} />
-                </React.Fragment>
-              )}
-            </div>
-          </React.Fragment>
+            {field.type === "password" && (
+              <React.Fragment>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  ref={passwordInput}
+                />
+                <FontAwesomeIcon
+                  onClick={() => {
+                    revealPassword(field);
+                  }}
+                  icon={
+                    showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"
+                  }
+                />
+              </React.Fragment>
+            )}
+          </div>
         );
       })}
       <button className="submit">{formType}</button>
