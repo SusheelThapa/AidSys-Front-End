@@ -47,8 +47,8 @@ const Login = () => {
   };
 
   const inputFields = [
-    { name: "Username", type: "text" },
-    { name: "Password", type: "password" },
+    { name: "Username", type: "text", icon: "fa-solid fa-user" },
+    { name: "Password", type: "password", icon: "fa-solid fa-lock" },
   ];
 
   return (
@@ -66,7 +66,11 @@ const Login = () => {
             AidSys
           </p>
 
-          <Form  formType="Login" onSubmit={handleSubmit} inputFields={inputFields} />
+          <Form
+            formType="Login"
+            onSubmit={handleSubmit}
+            inputFields={inputFields}
+          />
 
           <Link to={`/signup`}>Don't have one? Create one</Link>
         </div>

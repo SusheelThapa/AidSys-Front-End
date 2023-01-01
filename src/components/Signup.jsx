@@ -23,11 +23,11 @@ const Signup = () => {
   });
 
   const inputFields = [
-    { name: "Username", type: "text" },
-    { name: "College", type: "text" },
-    { name: "Phone", type: "text" },
-    { name: "Email", type: "email" },
-    { name: "Password", type: "password" },
+    { name: "Username", type: "text", icon: "fa-solid fa-user" },
+    { name: "College", type: "text", icon: "fa-solid fa-graduation-cap" },
+    { name: "Phone", type: "text", icon: "fa-solid fa-phone" },
+    { name: "Email", type: "email", icon: "fa-solid fa-envelope" },
+    { name: "Password", type: "password", icon: "fa-solid fa-lock" },
   ];
 
   const handleSubmit = async (event, data) => {

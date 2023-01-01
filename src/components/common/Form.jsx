@@ -1,5 +1,7 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Form = (props) => {
   const { formType, onSubmit, inputFields } = props;
   return (
@@ -25,6 +27,7 @@ const Form = (props) => {
               ref={field.ref}
               name={field.name}
             />
+            <FontAwesomeIcon icon={field.icon} />
           </div>
         );
       })}

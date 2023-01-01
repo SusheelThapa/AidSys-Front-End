@@ -82,7 +82,7 @@ input {
     padding: 14px 64px;
 }
 
-input~i {
+input~svg {
     position: absolute;
     left: 32px;
     top: 50%;
@@ -91,7 +91,7 @@ input~i {
     transition: color 0.4s;
 }
 
-input:focus~i {
+input:focus~svg>path {
     color: #843bc7;
 }
 
