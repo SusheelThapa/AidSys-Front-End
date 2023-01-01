@@ -22,6 +22,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 
+/**
+ * Globally importing font awesome
+ */
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fas);
+
+/**
+ * Routing
+ */
 const router = createBrowserRouter([
   {
     path: "/",
