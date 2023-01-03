@@ -1,4 +1,5 @@
-#login {
+#login,
+#signup {
     min-height: 100vh;
     width: 100%;
     display: grid;
@@ -21,7 +22,7 @@ section.side {
     max-width: 50%;
 }
 
-.login-container {
+.form-container {
     max-width: 450px;
     padding: 24px;
     display: flex;
@@ -29,7 +30,7 @@ section.side {
     align-items: center;
 }
 
-.title {
+.form-container-title {
     text-transform: uppercase;
     font-size: 3em;
     font-weight: bold;
@@ -37,14 +38,15 @@ section.side {
     letter-spacing: 1px;
 }
 
-.separator {
+.form-container-separator {
     width: 150px;
     height: 4px;
     background-color: #843bc7;
-    margin: 24px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
-.welcome-message {
+.form-container-welcome-message {
     text-align: center;
     font-size: 1.1em;
     line-height: 28px;
@@ -52,7 +54,7 @@ section.side {
     color: #696969;
 }
 
-.login-form {
+.form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -61,7 +63,7 @@ section.side {
 .form-control {
     width: 100%;
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 input,
@@ -80,7 +82,7 @@ input {
     padding: 14px 64px;
 }
 
-input~i {
+input~svg {
     position: absolute;
     left: 32px;
     top: 50%;
@@ -89,14 +91,16 @@ input~i {
     transition: color 0.4s;
 }
 
-input:focus~i {
+input:focus~svg>path {
     color: #843bc7;
 }
 
 button.submit {
     color: #fff;
     padding: 14px 64px;
-    margin: 32px auto;
+    margin: 20px auto;
+    
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -107,6 +111,11 @@ button.submit {
 
 button.submit:hover {
     opacity: 0.9;
+}
+
+a {
+    font-size: 1rem;
+    text-decoration: none;
 }
 
 /* ----  Responsiveness   ----  */

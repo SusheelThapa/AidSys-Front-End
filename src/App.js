@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Header from "./components/Header";
-import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 import Workspace from "./components/Workspace";
 
-import { getToken } from "./services/token";
+import { doesTokenExist } from "./services/token";
 
 function App() {
-  const [token, setToken] = useState();
+  /**
+   * For redirection purpose
+   */
+  const navigate = useNavigate();
 
   useEffect(() => {
-    /**
-     * This useEffect get the token store in local storage and
-     * set the value of token
-     */
-    const tokenLocal = getToken();
-
-    setToken(tokenLocal);
-  }, []);
+    if (!doesTokenExist()) {
+      navigate("/login");
+    }
+  });
 
   return (
     /**
@@ -27,15 +26,11 @@ function App() {
      * If token is not present in localStorage then we will show Login page
      */
     <React.Fragment>
-      {token != null && (
-        <div>
-          <Header />
-          <Sidebar />
-          <Workspace />
-        </div>
-      )}
-
-      {token == null && <Login />}
+      <div>
+        <Header />
+        <Sidebar />
+        <Workspace />
+      </div>
     </React.Fragment>
   );
 }

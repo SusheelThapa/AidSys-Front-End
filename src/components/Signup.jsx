@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
-import { sendLoginDetails } from "../services/request.js";
-import { doesTokenExist, saveToken } from "../services/token.js";
+import { sendSignupDetails } from "../services/request";
+import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
-const Login = () => {
+const Signup = () => {
   /**
    * navigate for redirection purpose
    */
@@ -23,6 +23,14 @@ const Login = () => {
     }
   });
 
+  const inputFields = [
+    { name: "Username", type: "text", icon: "fa-solid fa-user" },
+    { name: "College", type: "text", icon: "fa-solid fa-graduation-cap" },
+    { name: "Phone", type: "text", icon: "fa-solid fa-phone" },
+    { name: "Email", type: "email", icon: "fa-solid fa-envelope" },
+    { name: "Password", type: "password" },
+  ];
+
   const handleSubmit = async (event, data) => {
     /**
      * prevent default behaviour of submission
@@ -30,14 +38,21 @@ const Login = () => {
      */
     event.preventDefault();
 
-    const { username, password } = data;
+    const { username, password, college, email, phone } = data;
 
-    const response = await sendLoginDetails(username, password);
+    const response = await sendSignupDetails(
+      username,
+      password,
+      college,
+      email,
+      phone
+    );
 
     const { success, error, token } = response;
 
     if (success) {
       saveToken(token);
+
       navigate("/");
     } else if (error) {
       console.error(error);
@@ -47,29 +62,24 @@ const Login = () => {
     }
   };
 
-  const inputFields = [
-    { name: "Username", type: "text", icon: "fa-solid fa-user" },
-    { name: "Password", type: "password" },
-  ];
-
   return (
-    <div id="login">
+    <div id="signup">
       <section className="side">
         <img src={phoneImage} alt="" />
       </section>
 
       <FormContainer
-        title="Welcome Back"
-        message="Please, provide login credential to proceed and have access to
-            AidSys"
-        formType="Login"
+        title="Welcome"
+        message="Please, provide below credential to create account in AidSys
+        "
+        formType="Signup"
         onSubmit={handleSubmit}
         inputFields={inputFields}
       >
-        <Link to={`/signup`}>Don't have one? Create one</Link>
+        <Link to={`/login`}>Have one? Log in</Link>
       </FormContainer>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
