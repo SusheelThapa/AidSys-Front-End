@@ -4,13 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Workspace from "./components/Workspace";
+import { getTokenData } from "./services/request";
 
-import { doesTokenExist } from "./services/token";
+import { doesTokenExist, readToken } from "./services/token";
 
 function App() {
-  /**
-   * For redirection purpose
-   */
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,12 +17,13 @@ function App() {
     }
   });
 
-  return (
+  getTokenData(readToken()).then((data) => {
     /**
-     * Token can be considered as identity of user.
-     * If token is present in localStorage then we will show Header SideBar Workspace
-     * If token is not present in localStorage then we will show Login page
+     * TODO: Handle the data of that is obtain from token
      */
+  });
+
+  return (
     <React.Fragment>
       <div>
         <Header />
