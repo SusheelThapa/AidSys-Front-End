@@ -1,41 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Header from "./components/Header";
-import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 import Workspace from "./components/Workspace";
+import { getTokenData } from "./services/request";
 
-import { getToken } from "./services/token";
+import { doesTokenExist, readToken } from "./services/token";
 
 function App() {
-  const [token, setToken] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    /**
-     * This useEffect get the token store in local storage and
-     * set the value of token
-     */
-    const tokenLocal = getToken();
+    if (!doesTokenExist()) {
+      navigate("/login");
+    }
+  });
 
-    setToken(tokenLocal);
-  }, []);
+  getTokenData(readToken()).then((data) => {
+    /**
+     * TODO: Handle the data of that is obtain from token
+     */
+  });
 
   return (
-    /**
-     * Token can be considered as identity of user.
-     * If token is present in localStorage then we will show Header SideBar Workspace
-     * If token is not present in localStorage then we will show Login page
-     */
     <React.Fragment>
-      {token != null && (
-        <div>
-          <Header />
-          <Sidebar />
-          <Workspace />
-        </div>
-      )}
-
-      {token == null && <Login />}
+      <div>
+        <Header />
+        <Sidebar />
+        <Workspace />
+      </div>
     </React.Fragment>
   );
 }

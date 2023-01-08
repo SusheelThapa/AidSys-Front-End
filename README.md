@@ -16,29 +16,50 @@ ence enabling one-and-all present in the institution to make optimum use of the 
    3. [ESLing](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
    4. [Simple React Snippets](https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets)
 
-## Installation
+## Setting up Backend
 
-1. Clone the repository
+Before you proceed the installation, you need to setup backend for this project.
 
+The backend code for this project is found [here](https://github.com/SusheelThapa/AidSys-Back-End).
+
+Read README.md file for setting it up properly
+
+## Setting up Frond End
+
+### Cloning the repository
+
+1. First of all, clone the repository as
    ```sh
    git clone git@github.com:SusheelThapa/AidSys-Front-End.git
    ```
 
-2. Install the node modules
+### Setting up environmental variable
+
+1. Create a file `.env` and add the following content
+
+   ```env
+   REACT_APP_DOMAIN=http://localhost:5000
+   ```
+
+### Installation node packages
+
+1. Install the node modules
 
    ```sh
    npm i
    ```
 
-3. Running the project
+### Running the project
+
+1. Running the project
 
    ```sh
    npm start
    ```
 
-   _The project will run at PORT 5000_
+   _The project will run at PORT 3000_
 
-## Guidelines
+## Guidelines for Contributors
 
 These set of rules are to be taken into consideration while doing this project.
 
@@ -51,7 +72,7 @@ I cannot explain why this is useful but when you will continue, you will know yo
 3. Before commiting any changes, make sure to format the code with **Prettier**.
 4. The variable name should be chosen such that there won't be confusion on it name and for what it is created.
 5. The **files** and **directories name** should be in **lowercase**, space shouldn't be used(use underscore(`_`))
-6. The component name  file must be in in **PascalCase** 
+6. The component name file must be in in **PascalCase**
 
 ### Git and Github Guidelines
 
