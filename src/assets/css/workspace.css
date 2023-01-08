@@ -1,0 +1,21 @@
+#workspace {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#workspace>div {
+    margin: 10px;
+    width: 75%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 5rem;
+
+    background-color: rgb(165, 165, 249);
+
+}
