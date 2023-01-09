@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import "../assets/css/workspace.css";
-const Workspace = () => {
+export default function Workspace() {
   return (
-    <section id="workspace">
-      <div>This is workspace</div>
-    </section>
-  );
-};
-
-export default Workspace;
+    <div>
+      <section>
+        <div className="workspace">This is workspace123</div>
+      </section>
+    </div>
+  )
+}

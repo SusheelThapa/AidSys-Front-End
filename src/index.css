@@ -36,3 +36,13 @@
 .transparent-bg{
   background-color: transparent;
 }
+.workspace{
+  position: absolute;
+  top: 55%;
+  left: 61.0%;
+  transform: translate(-50%, -50%);
+  width: 1050px;
+  height: 560px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
