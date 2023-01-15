@@ -3,15 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
-import { sendSignupDetails } from "../services/request";
+import { createToken, sendSignupDetails } from "../services/request";
 import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
 const Signup = () => {
-  /**
-   * navigate for redirection purpose
-   */
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,10 +29,6 @@ const Signup = () => {
   ];
 
   const handleSubmit = async (event, data) => {
-    /**
-     * prevent default behaviour of submission
-     * send the login data to server
-     */
     event.preventDefault();
 
     const { username, password, college, email, phone } = data;
@@ -48,14 +41,19 @@ const Signup = () => {
       phone
     );
 
-    const { success, error, token } = response;
+    const { success, error } = response;
 
     if (success) {
+      const { userID } = response;
+
+      const token = await createToken(userID);
+
       saveToken(token);
 
       navigate("/");
     } else if (error) {
       console.error(error);
+      
       /**
        * In the web page show, the error message
        */

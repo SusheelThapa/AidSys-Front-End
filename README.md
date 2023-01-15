@@ -24,27 +24,40 @@ The backend code for this project is found [here](https://github.com/SusheelThap
 
 Read README.md file for setting it up properly
 
-## Installation
+## Setting up Frond End
 
-1. Clone the repository
+### Cloning the repository
 
+1. First of all, clone the repository as
    ```sh
    git clone git@github.com:SusheelThapa/AidSys-Front-End.git
    ```
 
-2. Install the node modules
+### Setting up environmental variable
+
+1. Create a file `.env` and add the following content
+
+   ```env
+   REACT_APP_DOMAIN=http://localhost:5000
+   ```
+
+### Installation node packages
+
+1. Install the node modules
 
    ```sh
    npm i
    ```
 
-3. Running the project
+### Running the project
+
+1. Running the project
 
    ```sh
    npm start
    ```
 
-   _The project will run at PORT 5000_
+   _The project will run at PORT 3000_
 
 ## Guidelines for Contributors
 
