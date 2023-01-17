@@ -1,5 +1,6 @@
 #workspace {
-    margin: 10px;
+    /* margin: 100px; */
+    padding: 18px;
     border: solid 2px black;
 
     display: flex;
@@ -7,4 +8,8 @@
     align-items: center;
 
     background-color: white;
+    grid-area: workspace;
+
+    width: 90%;
+    height: 90%;
 }

@@ -1,0 +1,21 @@
+#sidebar {
+    border: solid red 2px;
+    grid-area: sidebar;
+}
+.d-grid {
+    background-color: transparent;
+  }
+  
+  .badge {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .bold {
+    font-weight: bolder;
+  }
+  
+  .transparent-bg {
+    background-color: transparent;
+  }
+  

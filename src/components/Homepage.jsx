@@ -8,11 +8,11 @@ import "../assets/css/homepage.css";
 
 const Homepage = () => {
   return (
-    <React.Fragment>
+    <div id="homepage">
       <Header />
       <Sidebar />
       <Workspace />
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -7,10 +7,11 @@
 // export default Sidebar;
 import React from "react";
 
+import "../assets/css/sidebar.css";
+
 export default function Side() {
   return (
-    <div>
-      <div className="box">
+    <div id="sidebar">
         <ul className="list-group">
           <li className="list-group-item bold">
             All Items<span className="badge bg-primary rounded-pill">3</span>
@@ -77,7 +78,6 @@ export default function Side() {
             </div>
           </li>
         </ol>
-      </div>
     </div>
   );
 }
