@@ -1,0 +1,19 @@
+* {
+    background-color: rgb(220, 221, 221);
+}
+
+#homepage {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 80px 1fr;
+
+    grid-template-areas:
+        "header header"
+        "sidebar workspace";
+
+}

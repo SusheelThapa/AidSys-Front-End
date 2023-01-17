@@ -8,6 +8,8 @@ import { doesTokenExist, saveToken } from "../services/token";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
+import "../assets/css/auth.css";
+
 const Signup = () => {
   const navigate = useNavigate();
 
@@ -53,7 +55,7 @@ const Signup = () => {
       navigate("/");
     } else if (error) {
       console.error(error);
-      
+
       /**
        * In the web page show, the error message
        */
@@ -61,8 +63,8 @@ const Signup = () => {
   };
 
   return (
-    <div id="signup">
-      <section className="side">
+    <div id="auth">
+      <section className="auth-side">
         <img src={phoneImage} alt="" />
       </section>
 

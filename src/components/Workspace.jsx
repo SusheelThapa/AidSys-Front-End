@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
+
+import "../assets/css/workspace.css";
 
 export default function Workspace() {
-  return (
-    <div>
-      <section>
-        <div className="workspace">This is workspace123</div>
-      </section>
-    </div>
-  )
+  return <div id="workspace">This is workspace123</div>;
 }

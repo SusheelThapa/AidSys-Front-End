@@ -1,0 +1,13 @@
+#header {
+    border: solid red 2px;
+    grid-area: header;
+
+    width: inherit;
+    height: inherit;
+}
+
+.navbar,
+.nav-item,
+.nav-link {
+    background-color: rgb(255, 255, 255);
+}
