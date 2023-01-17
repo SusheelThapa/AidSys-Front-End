@@ -8,6 +8,8 @@ import { doesTokenExist, saveToken } from "../services/token.js";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
+import "../assets/css/auth.css";
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -52,8 +54,8 @@ const Login = () => {
   ];
 
   return (
-    <div id="login">
-      <section className="side">
+    <div id="auth">
+      <section className="auth-side">
         <img src={phoneImage} alt="" />
       </section>
 

@@ -13,8 +13,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
  */
 import "./index.css";
 
-import "./assets/css/login_signup.css";
-
 /**
  * Setting up React Router
  */

@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   color: #303433;
-  background-color: rgb(220, 221, 221);
+
 }
 
 .box {
@@ -33,10 +33,12 @@
 .bold {
   font-weight: bolder;
 }
-.transparent-bg{
+
+.transparent-bg {
   background-color: transparent;
 }
-.workspace{
+
+.workspace {
   position: absolute;
   top: 55%;
   left: 61.0%;

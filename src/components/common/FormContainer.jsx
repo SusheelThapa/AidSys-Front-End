@@ -2,6 +2,8 @@ import React from "react";
 
 import Form from "./Form.jsx";
 
+import "../../assets/css/formContainer.css";
+
 const FormContainer = (props) => {
   const { title, message, formType, onSubmit, inputFields, children } = props;
 

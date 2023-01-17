@@ -1,0 +1,34 @@
+.form-container {
+    max-width: 450px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container-title {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.form-container-separator {
+    width: 150px;
+    height: 4px;
+    background-color: #843bc7;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.form-container-welcome-message {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 28px;
+    margin-bottom: 30px;
+    color: #696969;
+}
+
+
+

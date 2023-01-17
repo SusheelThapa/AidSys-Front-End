@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import "../../assets/css/form.css";
+
 const Form = ({ formType, onSubmit, inputFields }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -34,7 +36,11 @@ const Form = ({ formType, onSubmit, inputFields }) => {
           <div key={field.name} className="form-control">
             {field.type !== "password" && (
               <React.Fragment>
-                <input type={field.type} placeholder={field.name} />
+                <input
+                  class="form-input"
+                  type={field.type}
+                  placeholder={field.name}
+                />
                 <FontAwesomeIcon icon={field.icon} />
               </React.Fragment>
             )}
@@ -42,6 +48,7 @@ const Form = ({ formType, onSubmit, inputFields }) => {
             {field.type === "password" && (
               <React.Fragment>
                 <input
+                  class="form-input"
                   type="password"
                   placeholder="Password"
                   ref={passwordInput}
@@ -59,7 +66,7 @@ const Form = ({ formType, onSubmit, inputFields }) => {
           </div>
         );
       })}
-      <button className="submit">{formType}</button>
+      <button className="form-submit">{formType}</button>
     </form>
   );
 };

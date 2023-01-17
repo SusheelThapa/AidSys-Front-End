@@ -1,0 +1,43 @@
+#auth {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.auth-side {
+    background: url(../img/login-curve-design.png) no-repeat;
+    background-size: 100% 102%;
+}
+
+.auth-side img {
+    width: 50%;
+    max-width: 50%;
+}
+
+
+/* ----  Responsiveness   ----  */
+@media (max-width: 780px) {
+
+    #login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .auth-side {
+        display: none;
+    }
+}
+
+
+a {
+    font-size: 1rem;
+    text-decoration: none;
+}
