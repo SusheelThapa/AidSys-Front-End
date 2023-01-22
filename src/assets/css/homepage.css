@@ -2,7 +2,8 @@
     background-color: rgb(220, 221, 221);
 }
 
-#homepage {
+/** Donot delete this css file*/
+/* #homepage {
     width: 100vw;
     min-height: 100vh;
     display: grid;
@@ -16,4 +17,4 @@
         "header header"
         "sidebar workspace";
 
-}
+} */

@@ -1,17 +1,23 @@
 import React from "react";
 
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import Workspace from "./Workspace";
+// import Header from "./Header";
+// import Sidebar from "./Sidebar";
+// import Workspace from "./Workspace";
 
 import "../assets/css/homepage.css";
 
 const Homepage = () => {
   return (
     <div id="homepage">
-      <Header />
+      {/* <Header />
       <Sidebar />
-      <Workspace />
+      <Workspace /> */}
+
+      {/**
+       * Your landing page goes here
+       */}
+
+      <h1>Landing page</h1>
     </div>
   );
 };
