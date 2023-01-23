@@ -39,15 +39,18 @@ class Homepage extends Component {
          * TODO: Refactor below content into some components
          */}
 
-        <div className="flex justify-center">
-          <div className="flex flex-col items-center bg-blue-800 mt-20 rounded-t-full w-[700px] h-28 xl:w-[1000px]">
+        <div className="flex justify-end">
+          <div
+            className="flex flex-col items-center justify-end  w-full  bg-gradient-to-br from-purple-500 to-indigo-500 mt-20  h-40 "
+            style={{ "clip-path": "ellipse(60% 100% at 50% 100%)" }}
+          >
             <Link
-              className="mt-4 bg-blue-800 text-yellow-400 hover:text-yellow-600 font-bold underline"
+              className="mt-4 bg-transparent text-yellow-400 hover:text-yellow-600 font-bold underline"
               to="#"
             >
               Explore More
             </Link>
-            <p className="font-bold bg-blue-800 text-white mt-2 mb-4 text-2xl">
+            <p className="font-bold bg-transparent  text-white mt-2 mb-4 text-2xl">
               Motto goes here!
             </p>
           </div>
