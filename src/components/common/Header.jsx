@@ -9,16 +9,16 @@ const Header = () => {
       </p>
       <div className="flex space-x-10 mx-auto bg-blue-800 items-center">
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          Home
+          <Link to={"/"}>Home</Link>
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          Assets
+          <Link to={"/assets"}>Assets</Link>
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          Notice Board
+          <Link>Notice Board</Link>
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          User
+          <Link>User</Link>
         </button>
       </div>
       <div className="bg-blue-800 my-4 mx-8">

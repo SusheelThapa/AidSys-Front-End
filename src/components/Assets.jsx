@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./common/Header";
 import { getStudentDetail, getTokenData } from "../services/request";
 import { readToken } from "../services/token";
 
