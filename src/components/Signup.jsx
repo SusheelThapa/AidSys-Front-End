@@ -46,13 +46,15 @@ const Signup = () => {
     const { success, error } = response;
 
     if (success) {
-      const { userID } = response;
+      const { studentId } = response;
 
-      const token = await createToken(userID);
+      const token = await createToken(studentId);
 
       saveToken(token);
 
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } else if (error) {
       console.error(error);
 
