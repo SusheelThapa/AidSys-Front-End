@@ -32,9 +32,9 @@ const Login = () => {
     const { success, error } = response;
 
     if (success) {
-      const { userID } = response;
+      const { studentID } = response;
 
-      const token = await createToken(userID);
+      const token = await createToken(studentID);
 
       saveToken(token);
 

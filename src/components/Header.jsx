@@ -1,11 +1,33 @@
 import React from "react";
-import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
-import "../assets/css/header.css";
 const Header = () => {
   return (
-    <div id="header">
-      <NavBar />
+    <div className="flex bg-blue-800 h-20">
+      <p className="mx-8 font-bold text-white bg-blue-800 font-serif text-2xl mt-4">
+        AidSys
+      </p>
+      <div className="flex space-x-10 mx-auto bg-blue-800 items-center">
+        <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
+          Home
+        </button>
+        <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
+          What we offer
+        </button>
+        <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
+          Notice Board
+        </button>
+        <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
+          Anything new?
+        </button>
+      </div>
+      <div className="bg-blue-800 my-4 mx-8">
+        <button className="bg-transparent py-1 px-4 border text-yellow-400 hover:font-bold">
+          <Link to={"/login"} className="bg-transparent hover:text-yellow-500">
+            Login
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };
