@@ -1,21 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import Header from "./Header";
-// import Sidebar from "./Sidebar";
-// import Workspace from "./Workspace";
-
 import Student from "../assets/img/student.png";
 const Homepage = () => {
   return (
     <div id="homepage" className="flex flex-col justify-between h-screen">
-      {/* <Header />
-      <Sidebar />
-      <Workspace /> */}
-
-      {/**
-       * Your landing page goes here
-       */}
       <div className="flex bg-blue-800 h-20">
         <p className="mx-8 font-bold text-white bg-blue-800 font-serif text-2xl mt-4">
           AidSys
