@@ -34,9 +34,9 @@ export const sendSignupDetails = async (
   return res.data;
 };
 
-export const createToken = async (userID) => {
+export const createToken = async (studentID) => {
   const { data } = await axios.post(DOMAIN + "/api/token/create", {
-    userID,
+    studentID,
   });
 
   return data;
@@ -49,8 +49,8 @@ export const getTokenData = async (token) => {
   return response;
 };
 
-export const getUserDetail = async (userID) => {
-  const { data } = await axios.get(DOMAIN + "/api/users/" + userID);
+export const getStudentDetail = async (userID) => {
+  const { data } = await axios.get(DOMAIN + "/api/students/" + userID);
   return data;
 };
 

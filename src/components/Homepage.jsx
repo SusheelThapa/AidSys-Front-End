@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Student from "../assets/img/student.png";
 
-import { getTokenData } from "../services/request";
+import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 
 const Homepage = () => {
@@ -16,13 +16,21 @@ const Homepage = () => {
       const res = await getTokenData(readToken());
 
       /**
-       * * You will get the id of student as res.data = {studentId: ....}
+       * * You will get the id of student as res.data = {studentID: ....}
        */
       console.log(res.data);
 
       /**
        * TODO: Use the studentID to get the data of student and use it
        */
+
+      const studentDetails = await getStudentDetail(res.data.studentID);
+
+      /**
+       * TODO: The detail of the student has been printed in console.
+       * TODO: You can use the necessary detail
+       */
+      console.log(studentDetails);
     }
   }, 2000);
 
