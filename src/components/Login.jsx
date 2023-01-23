@@ -38,7 +38,9 @@ const Login = () => {
 
       saveToken(token);
 
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } else if (error) {
       console.error(error);
 
