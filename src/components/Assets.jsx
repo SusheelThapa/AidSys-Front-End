@@ -1,11 +1,36 @@
 import React, { Component } from "react";
 import Header from "./common/Header";
 
+import { getStudentDetail, getTokenData } from "../services/request";
+import { doesTokenExist, readToken } from "../services/token";
+
 class Asset extends Component {
+  state = { student: null };
+
+  componentDidMount() {
+    if (doesTokenExist()) {
+      getTokenData(readToken()).then((res) => {
+        getStudentDetail(res.data.studentID).then((studentdata) => {
+          if (studentdata.success) {
+            const student = studentdata.student[0];
+            console.log(student);
+            this.setState({ student: student });
+          } else {
+            alert(studentdata.message);
+          }
+        });
+      });
+    } else {
+      /**
+       * TODO: Redirect to login page
+       */
+    }
+  }
+
   render() {
     return this.state.student ? (
       <div>
-        <Header />
+        <Header studentName={this.state.student.username.toUpperCase()} />
         <div className="h-screen bg-gray-200">
           {/* page one */}
           <div className="flex space-x-6 xl:space-x-32">
