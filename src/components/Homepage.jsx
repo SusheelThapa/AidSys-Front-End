@@ -10,10 +10,29 @@ import { doesTokenExist, readToken } from "../services/token";
 class Homepage extends Component {
   state = { student: null };
 
+  componentDidMount() {
+    if (doesTokenExist()) {
+      getTokenData(readToken()).then((res) => {
+        getStudentDetail(res.data.studentID).then((studentdata) => {
+          if (studentdata.success) {
+            const student = studentdata.student[0];
+            this.setState({ student: student });
+          } else {
+            alert(studentdata.message);
+          }
+        });
+      });
+    } else {
+      /**
+       * TODO: Redirect to login page
+       */
+    }
+  }
+
   render() {
     return this.state.student ? (
       <div id="homepage" className="flex flex-col justify-between h-screen">
-        <Header />
+        <Header studentName={this.state.student.username.toUpperCase()} />
         <Hero />
 
         {/**
