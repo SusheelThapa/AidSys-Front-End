@@ -3,13 +3,21 @@ import { useNavigate } from "react-router-dom";
 
 import Homepage from "./components/Homepage";
 
-import { doesTokenExist } from "./services/token";
+import { doesTokenExist, readToken } from "./services/token";
+import { getTokenData } from "./services/request";
 
 function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!doesTokenExist()) {
+    if (doesTokenExist()) {
+      getTokenData(readToken()).then((res) => {
+        if (res.data.error) {
+          localStorage.clear();
+          navigate("/login");
+        }
+      });
+    } else {
       navigate("/login");
     }
   });
