@@ -12,13 +12,13 @@ const Header = () => {
           Home
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          What we offer
+          Assets
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
           Notice Board
         </button>
         <button className="bg-blue-800 text-yellow-400 hover:font-bold hover:text-yellow-600">
-          Anything new?
+          User
         </button>
       </div>
       <div className="bg-blue-800 my-4 mx-8">
