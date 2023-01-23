@@ -37,7 +37,7 @@ const Form = ({ formType, onSubmit, inputFields }) => {
             {field.type !== "password" && (
               <React.Fragment>
                 <input
-                  class="form-input"
+                  className="form-input"
                   type={field.type}
                   placeholder={field.name}
                 />
@@ -48,7 +48,7 @@ const Form = ({ formType, onSubmit, inputFields }) => {
             {field.type === "password" && (
               <React.Fragment>
                 <input
-                  class="form-input"
+                  className="form-input"
                   type="password"
                   placeholder="Password"
                   ref={passwordInput}
