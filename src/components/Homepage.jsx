@@ -2,7 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Student from "../assets/img/student.png";
+
+import { getTokenData } from "../services/request";
+import { doesTokenExist, readToken } from "../services/token";
+
 const Homepage = () => {
+  /**
+   * Execute when the web page loaded
+   */
+
+  setTimeout(async (event) => {
+    if (doesTokenExist()) {
+      const res = await getTokenData(readToken());
+
+      /**
+       * * You will get the id of student as res.data = {studentId: ....}
+       */
+      console.log(res.data);
+
+      /**
+       * TODO: Use the studentID to get the data of student and use it
+       */
+    }
+  }, 2000);
+
   return (
     <div id="homepage" className="flex flex-col justify-between h-screen">
       <div className="flex bg-blue-800 h-20">
