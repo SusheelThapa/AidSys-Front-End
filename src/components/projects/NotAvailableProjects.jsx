@@ -30,7 +30,7 @@ function AvailableProjects() {
           <hr />
           {/* div for buttons */}
           <div className="flex justify-between mt-4">
-            <p type="button" className="font-bold text-sm underline text-indigo-400 cursor-not-allowed">Apply for collab</p>
+            <p type="button" className="font-bold text-sm underline text-indigo-300 cursor-not-allowed">Apply for collab</p>
             <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">Learn More</button>
           </div>
         </div>

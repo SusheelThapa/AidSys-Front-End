@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./common/Header";
+import ProjectsForYou from "./projects/ProjectsForYou";
 
 const Projects = () => {
   return (
@@ -27,11 +28,12 @@ const Projects = () => {
               with your fellow peers to build something new
             </p>
             <div className="flex justify-center">
-              <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white">EXPLORE</button>
+              <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white font-bold">EXPLORE</button>
             </div>
           </div>
         </div>
       </div>
+      <ProjectsForYou/>
     </>
   );
 };
