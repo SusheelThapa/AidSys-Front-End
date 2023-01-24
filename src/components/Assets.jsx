@@ -6,6 +6,7 @@ import { doesTokenExist, readToken } from "../services/token";
 import BookedAssets from "./BookedAssets";
 import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
+import AssetsRecommendation from "./AssetsRecommendation";
 
 class Asset extends Component {
   state = { student: null };
@@ -76,6 +77,7 @@ class Asset extends Component {
         </div>
         <AssetsItems/>
         <AssetsMap/>
+        <AssetsRecommendation/>
       </div>
     ) : (
       <h1>Loading</h1>
