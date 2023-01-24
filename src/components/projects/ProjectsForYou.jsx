@@ -1,6 +1,7 @@
 import React from "react";
 import AvailableProjects from "./AvailableProjects";
 import NotAvailableProjects from "./NotAvailableProjects";
+import ExploreWebDev from "./explore/ExploreWebDev";
 
 function ProjectsForYou() {
   return (
@@ -20,6 +21,8 @@ function ProjectsForYou() {
         <AvailableProjects/>
         <NotAvailableProjects/>
         </div>
+        <h2 className="mt-20 text-3xl font-bold text-assets-100 ml-16 font-serif">EXPLORE BY CATEGORIES</h2>
+      <ExploreWebDev/>
     </>
   );
 }

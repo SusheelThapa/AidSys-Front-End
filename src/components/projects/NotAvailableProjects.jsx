@@ -2,7 +2,7 @@ import React from "react";
 import Red from "../../assets/img/red.png";
 import Person from "../../assets/img/round-person.png";
 import classroom from "../../assets/img/classroom";
-function AvailableProjects() {
+function NotAvailableProjects() {
   return (
     <div>
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
@@ -39,4 +39,4 @@ function AvailableProjects() {
   );
 }
 
-export default AvailableProjects;
+export default NotAvailableProjects;
