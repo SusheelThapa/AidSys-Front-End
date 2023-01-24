@@ -1,12 +1,23 @@
 import React from "react";
+import { useRef } from "react";
+import { addAsset } from "../services/request";
 
 function AssetsAdd() {
+  const name = useRef();
+  const description = useRef();
+
   const handleAddAsset = async () => {
     /**
      * Need to create a route to add assets
      */
+    const assetName = name.current.value;
 
-    console.log("When the add asset route will be create this will be done");
+    const assetDescription = description.current.value;
+
+    await addAsset(assetName);
+
+    name.current.value = "";
+    description.current.value = "";
   };
   return (
     <div className="my-32">
@@ -26,6 +37,7 @@ function AssetsAdd() {
                 name=""
                 id=""
                 placeholder="Name of asset"
+                ref={name}
               />
               <input
                 className="focus:outline-none border rounded-lg w-2/5 p-2 placeholder:italic "
@@ -41,6 +53,7 @@ function AssetsAdd() {
                 rows="6"
                 className=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
                 placeholder="Brief description about the asset"
+                ref={description}
               ></textarea>
             </div>
           </div>
