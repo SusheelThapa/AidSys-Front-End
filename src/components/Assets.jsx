@@ -36,7 +36,7 @@ class Asset extends Component {
           {/* page one */}
           <div className="flex space-x-6 xl:space-x-32">
             {/* left container */}
-            <div className="flex mt-56 pt-8 pb-16 flex-col items-center bg-white w-1/2 xl:mx-14">
+            <div className="flex mt-56 pt-8 pb-16 flex-col items-center bg-white w-1/2 xl:mx-14 h-full">
               <h1 className="text-3xl font-bold font-serif text-assets-100">
                 WELCOME TO ASSETS PAGE
               </h1>
