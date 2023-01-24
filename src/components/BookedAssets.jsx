@@ -11,7 +11,7 @@ function BookedAssets({ assets }) {
           return <CommonBookedAssets key={asset.asset._id} asset={asset.asset} />;
         })}
 
-        <div className="group mx-0 h-20">
+        <div className="group mx-0 h-56">
           <div className="group-hover:cursor-pointer flex items-center flex-col space-y-2 mx-4  outline outline-gray-500 rounded-lg">
             <img src={Addmore} className="w-40" alt="" />
             <h1 className="font-bold underline text-gray-500 text-sm">
