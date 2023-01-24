@@ -1,6 +1,6 @@
 import React from "react";
 import CommonItems from "./CommonItems";
-function AssetsTwo() {
+function AssetsItems() {
   return (
     // global container
     <div className="bg-white h-full pb-28">
@@ -50,4 +50,4 @@ function AssetsTwo() {
   );
 }
 
-export default AssetsTwo;
+export default AssetsItems;
