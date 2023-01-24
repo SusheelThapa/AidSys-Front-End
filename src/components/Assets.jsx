@@ -9,6 +9,7 @@ import AssetsMap from "./AssetsMap";
 import AssetsRecommendation from "./AssetsRecommendation";
 import AssetsAdd from "./AssetsAdd";
 import Footer from "./common/Footer";
+import Loading from "./Loading";
 
 class Asset extends Component {
   state = { student: null };
@@ -72,19 +73,21 @@ class Asset extends Component {
                 <h1 className="p-4 text-assets-100 text-2xl font-serif font-bold">
                   YOUR BOOKED ASSETS
                 </h1>
-                <p><BookedAssets/></p>
+                <p>
+                  <BookedAssets />
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <AssetsItems/>
-        <AssetsMap/>
-        <AssetsRecommendation/>
-        <AssetsAdd/>
-        <Footer/>
+        <AssetsItems />
+        <AssetsMap />
+        <AssetsRecommendation />
+        <AssetsAdd />
+        <Footer />
       </div>
     ) : (
-      <h1>Loading</h1>
+      <Loading />
     );
   }
 }

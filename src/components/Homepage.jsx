@@ -6,6 +6,7 @@ import Hero from "./Hero";
 
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
+import Loading from "./Loading";
 
 class Homepage extends Component {
   state = { student: null };
@@ -57,7 +58,7 @@ class Homepage extends Component {
         </div>
       </div>
     ) : (
-      <h1>Loading</h1>
+      <Loading />
     );
   }
 }
