@@ -1,6 +1,13 @@
 import React from "react";
 
 function AssetsAdd() {
+  const handleAddAsset = async () => {
+    /**
+     * Need to create a route to add assets
+     */
+
+    console.log("When the add asset route will be create this will be done");
+  };
   return (
     <div className="my-32">
       <p className="text-3xl font-bold text-assets-100 mx-8 font-serif">
@@ -38,10 +45,14 @@ function AssetsAdd() {
             </div>
           </div>
           <div className="flex justify-center mb-8">
-            <button className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl">ADD TO ASSETS</button>
+            <button
+              onClick={handleAddAsset}
+              className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl"
+            >
+              ADD TO ASSETS
+            </button>
           </div>
         </div>
-        
       </div>
     </div>
   );
