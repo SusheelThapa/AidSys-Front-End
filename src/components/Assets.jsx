@@ -4,6 +4,7 @@ import Header from "./common/Header";
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import BookedAssets from "./BookedAssets";
+import AssetsTwo from "./AssetsTwo";
 
 class Asset extends Component {
   state = { student: null };
@@ -72,7 +73,7 @@ class Asset extends Component {
             </div>
           </div>
         </div>
-        <div>part 2</div>
+        <AssetsTwo/>
       </div>
     ) : (
       <h1>Loading</h1>
