@@ -11,7 +11,7 @@ import AssetsAdd from "./AssetsAdd";
 import Footer from "./common/Footer";
 import Loading from "./Loading";
 
-class Asset extends Component {
+class Assets extends Component {
   state = { student: null };
 
   componentDidMount() {
@@ -92,4 +92,4 @@ class Asset extends Component {
   }
 }
 
-export default Asset;
+export default Assets;
