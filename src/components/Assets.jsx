@@ -3,6 +3,7 @@ import Header from "./common/Header";
 
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
+import BookedAssets from "./BookedAssets";
 
 class Asset extends Component {
   state = { student: null };
@@ -66,7 +67,7 @@ class Asset extends Component {
                 <h1 className="p-4 text-assets-100 text-2xl font-serif font-bold">
                   YOUR BOOKED ASSETS
                 </h1>
-                <p>Images goes here</p>
+                <p><BookedAssets/></p>
               </div>
             </div>
           </div>
