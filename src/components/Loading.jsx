@@ -1,6 +1,8 @@
 import React from "react";
-import "../assets/css/loading.css"
-const loading = () => {
+
+import "../assets/css/loading.css";
+
+const Loading = () => {
   return (
     <div class="loading-container">
       <div class="loading-spinner"></div>
@@ -8,4 +10,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;
