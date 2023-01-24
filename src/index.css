@@ -5,7 +5,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #303433;
-
+}
+.projectsBg {
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/home/maxwell/Documents/Codes/AidSys-Front-End/src/assets/img/classroom");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
