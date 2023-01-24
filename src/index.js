@@ -51,6 +51,10 @@ const router = createBrowserRouter([
     element: <Asset />,
   },
   {
+    path: "/assets/:id",
+    element: <Asset />,
+  },
+  {
     path: "/projects",
     element: <Projects />,
   },

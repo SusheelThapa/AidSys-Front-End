@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import Classroom from "../assets/img/classroom";
 function CommonItems({ asset }) {
   return (
@@ -18,7 +21,7 @@ function CommonItems({ asset }) {
             enim unde soluta.
           </p>
           <div className="cursor-pointer underline text-sm flex justify-end font-bold">
-            See more
+            <Link to={`/assets/${asset._id}`}>See more</Link>
           </div>
         </div>
       </div>
