@@ -20,6 +20,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Assets from "./components/Assets";
+import Asset from "./components/Asset";
 import Projects from "./components/Projects";
 
 /**
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/assets/:id",
-    // element: <Asset />,
+    element: <Asset />,
   },
   {
     path: "/projects",
