@@ -7,6 +7,7 @@ import BookedAssets from "./BookedAssets";
 import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
 import AssetsRecommendation from "./AssetsRecommendation";
+import AssetsAdd from "./AssetsAdd";
 
 class Asset extends Component {
   state = { student: null };
@@ -78,6 +79,7 @@ class Asset extends Component {
         <AssetsItems/>
         <AssetsMap/>
         <AssetsRecommendation/>
+        <AssetsAdd/>
       </div>
     ) : (
       <h1>Loading</h1>
