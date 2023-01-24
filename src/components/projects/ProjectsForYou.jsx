@@ -5,6 +5,8 @@ import ExploreWebDev from "./explore/ExploreWebDev";
 import ExploreAR from "./explore/ExploreAR";
 import ExploreAppDev from "./explore/ExploreAppDev";
 import ExploreDS from "./explore/ExploreDS";
+import PostProject from "./PostProject";
+import Footer from "../common/Footer";
 
 function ProjectsForYou() {
   return (
@@ -29,6 +31,8 @@ function ProjectsForYou() {
       <ExploreAppDev/>
       <ExploreAR/>
       <ExploreDS/>
+      <PostProject/>
+      <Footer/>
     </>
   );
 }
