@@ -32,7 +32,7 @@ function AssetsAdd() {
               <textarea
                 id="message"
                 rows="6"
-                class=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
+                className=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
                 placeholder="Brief description about the asset"
               ></textarea>
             </div>

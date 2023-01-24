@@ -73,9 +73,9 @@ class Asset extends Component {
                 <h1 className="p-4 text-assets-100 text-2xl font-serif font-bold">
                   YOUR BOOKED ASSETS
                 </h1>
-                <p>
+                <div>
                   <BookedAssets />
-                </p>
+                </div>
               </div>
             </div>
           </div>
