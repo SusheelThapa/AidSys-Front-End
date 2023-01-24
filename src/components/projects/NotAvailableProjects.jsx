@@ -1,13 +1,13 @@
 import React from "react";
 import Red from "../../assets/img/red.png";
 import Person from "../../assets/img/round-person.png";
-import classroom from "../../assets/img/classroom";
+import classroom from "../../assets/img/classroom.png";
 function NotAvailableProjects() {
   return (
     <div>
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
       <div className="relative">
-        <img className="rounded-t-xl" src={classroom} alt="image" />
+        <img className="rounded-t-xl" src={classroom} alt="classroom" />
         <img className="absolute w-10 right-2 top-2" src={Red} alt="green" />
       </div>
         {/* div for overall bottom content */}

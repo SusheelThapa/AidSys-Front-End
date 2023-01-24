@@ -1,5 +1,5 @@
 import React from "react";
-import Classroom from "../assets/img/classroom";
+import Classroom from "../assets/img/classroom.png";
 function CommonItems() {
   return (
     <div className="flex hover:shadow-2xl p-2 space-y-8">
