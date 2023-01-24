@@ -8,6 +8,7 @@ import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
 import AssetsRecommendation from "./AssetsRecommendation";
 import AssetsAdd from "./AssetsAdd";
+import Footer from "./common/Footer";
 
 class Asset extends Component {
   state = { student: null };
@@ -80,6 +81,7 @@ class Asset extends Component {
         <AssetsMap/>
         <AssetsRecommendation/>
         <AssetsAdd/>
+        <Footer/>
       </div>
     ) : (
       <h1>Loading</h1>
