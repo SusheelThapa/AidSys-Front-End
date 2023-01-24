@@ -38,7 +38,7 @@ class AssetsItems extends Component {
           </div>
           {/* right container */}
           <div className="w-2/3">
-            <div className="bg-white  rounded-lg border shadow-xl mr-4 xl:mr-12 mt-20 pr-4 xl:pr-20">
+            <div className="bg-white h-[700px] overflow-y-auto rounded-lg border shadow-xl mr-4 xl:mr-12 mt-20 pr-4 xl:pr-20">
               <div className="flex ">
                 <div className="space-x-8 px-6 py-6">
                   <button className="font-bold text-2xl text-assets-100 hover:text-indigo-400 ">
