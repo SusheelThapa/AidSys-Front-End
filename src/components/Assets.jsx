@@ -74,7 +74,7 @@ class Asset extends Component {
                   YOUR BOOKED ASSETS
                 </h1>
                 <div>
-                  <BookedAssets />
+                  <BookedAssets assets={this.state.student.bookedAssets} />
                 </div>
               </div>
             </div>
