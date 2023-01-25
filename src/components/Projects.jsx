@@ -40,9 +40,12 @@ class Projects extends Component {
   }
 
   handleAddProject = async (project) => {
-    await addProject(project);
-    const newProject = [...this.state.projects, ...project];
-    console.log(newProject);
+    if (this.state.project !== null) {
+      const newProject = [...this.state.projects, project];
+      console.log(newProject);
+      this.setState({ projects: newProject });
+    }
+    addProject(project);
   };
 
   render() {
