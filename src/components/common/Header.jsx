@@ -28,7 +28,7 @@ const Header = ({ studentName }) => {
           <Link>Notice Board</Link>
         </button>
         <button className="bg-transparent text-yellow-400 hover:font-bold hover:text-yellow-600">
-          <Link>User</Link>
+          <Link to={"/projects"}>Projects</Link>
         </button>
       </div>
       <div className="bg-transparent my-4 mx-8">

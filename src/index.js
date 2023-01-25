@@ -19,7 +19,9 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Asset from "./components/Assets";
+import Assets from "./components/Assets";
+import Asset from "./components/Asset";
+import Projects from "./components/Projects";
 
 /**
  * Globally importing font awesome
@@ -47,7 +49,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/assets",
+    element: <Assets />,
+  },
+  {
+    path: "/assets/:id",
     element: <Asset />,
+  },
+  {
+    path: "/projects",
+    element: <Projects />,
   },
 ]);
 
