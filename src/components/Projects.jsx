@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import Header from "./common/Header";
 import ProjectsForYou from "./projects/ProjectsForYou";
 
-import { getStudentDetail, getTokenData } from "../services/request";
+import {
+  getAllProjects,
+  getStudentDetail,
+  getTokenData,
+} from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
 class Projects extends Component {
-  state = { student: null };
+  state = { student: null, projects: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
@@ -26,6 +30,12 @@ class Projects extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getAllProjects().then((res) => {
+      if (res.success) {
+        this.setState({ projects: res.projects });
+      }
+    });
   }
 
   render() {
