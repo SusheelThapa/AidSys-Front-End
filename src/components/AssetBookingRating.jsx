@@ -3,7 +3,7 @@ import Rating from "../assets/img/rating.png"
 import {AiOutlineStar} from "react-icons/ai"
 function AssetBookingRating() {
   return (
-    <div>
+    <div className='mt-32'>
         <div className='flex justify-between px-20 space-x-8 xl:space-x-28'>
         {/* div for previous bookings */}
             <div className='w-3/5'>

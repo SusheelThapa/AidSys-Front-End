@@ -41,9 +41,7 @@ const Asset = () => {
           </div>
         </div>
       </div>
-      <div className="mt-32">
         <AssetBookingRating/>
-      </div>
     </React.Fragment>
   );
 };
