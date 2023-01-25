@@ -5,6 +5,11 @@ import Classroom from "../assets/img/classroom.png";
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
+
+import AssetBookingRating from "./AssetBookingRating";
+import Footer from "./common/Footer";
+import AssetReview from "./AssetReview";
+
 class Asset extends Component {
   state = { student: null };
 
@@ -39,7 +44,6 @@ class Asset extends Component {
               src={Classroom}
               alt="img"
             />
-
           </div>
           <div className="flex flex-col p-6 ml-6 items-center justify-center w-1/2">
             <h1 className="text-assets-100 font-bold text-3xl font-serif mb-8">
@@ -69,15 +73,14 @@ class Asset extends Component {
           </div>
         </div>
 
-       <AssetBookingRating />
-      <AssetReview />
-      <Footer />
+        <AssetBookingRating />
+        <AssetReview />
+        <Footer />
       </React.Fragment>
     ) : (
       <Loading />
     );
   }
 }
-
 
 export default Asset;

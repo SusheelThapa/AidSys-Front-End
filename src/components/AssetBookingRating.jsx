@@ -1,6 +1,7 @@
 import React from 'react'
 import Rating from "../assets/img/rating.png"
 import {AiOutlineStar} from "react-icons/ai"
+
 function AssetBookingRating() {
   return (
     <div className='mt-32'>
