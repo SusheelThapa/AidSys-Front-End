@@ -15,7 +15,7 @@ const Header = ({ studentName }) => {
   return (
     <div className="flex bg-gradient-to-l from-purple-500 to-indigo-500 h-20">
       <p className="mx-8 font-bold text-white bg-transparent font-serif text-2xl mt-4">
-        AidSys
+        <Link to={"/"}>AidSys</Link>
       </p>
       <div className="flex space-x-10 mx-auto bg-transparent items-center">
         <button className="bg-transparent text-yellow-400 hover:font-bold hover:text-yellow-600">
