@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./common/Header";
+
 import Classroom from "../assets/img/classroom.png";
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
@@ -38,6 +39,7 @@ class Asset extends Component {
               src={Classroom}
               alt="img"
             />
+
           </div>
           <div className="flex flex-col p-6 ml-6 items-center justify-center w-1/2">
             <h1 className="text-assets-100 font-bold text-3xl font-serif mb-8">
@@ -66,14 +68,16 @@ class Asset extends Component {
             </div>
           </div>
         </div>
-        <div className="mt-40">
-          <p>part2</p>
-        </div>
+
+       <AssetBookingRating />
+      <AssetReview />
+      <Footer />
       </React.Fragment>
     ) : (
       <Loading />
     );
   }
 }
+
 
 export default Asset;
