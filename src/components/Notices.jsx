@@ -31,6 +31,7 @@ class Notices extends Component {
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.username.toUpperCase()} />
+        <h1>Other Code for notices goes here</h1>
       </React.Fragment>
     ) : (
       <Loading />
