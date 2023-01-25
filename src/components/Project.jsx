@@ -8,6 +8,8 @@ import Laptop from "../assets/img/laptop.png";
 import LaptopTwo from "../assets/img/laptop2.png";
 import LaptopThree from "../assets/img/laptop3.png";
 import { BsChevronCompactLeft, BsChevronCompactRight, BsFileSlides } from "react-icons/bs";
+import ProjectTeam from "./ProjectTeam";
+import ProjectVacancy from "./ProjectVacancy";
 // class Project extends Component {
 //   state = { student: null };
 
@@ -113,6 +115,8 @@ const Project = () => {
           </div>
         </div>
       </div>
+      <ProjectTeam/>
+      <ProjectVacancy/>
     </>
   );
 };
