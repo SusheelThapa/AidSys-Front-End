@@ -1,5 +1,5 @@
 import React from 'react'
-import Classroom from "../assets/img/classroom"
+import Classroom from "../assets/img/classroom.png"
 function CommonRecommendation() {
   return (
     <div className='flex flex-col items-center container mx-auto'>
