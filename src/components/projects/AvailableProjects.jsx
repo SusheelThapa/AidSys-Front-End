@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Green from "../../assets/img/green.png";
 import Person from "../../assets/img/round-person.png";
@@ -43,7 +44,7 @@ function AvailableProjects({ project }) {
           {/* div for buttons */}
           <div className="flex justify-between mt-4">
             <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
-              Apply for collab
+              <Link to={`/projects/${project._id}`}>Apply for collab</Link>
             </button>
             <button
               onClick={() => {
