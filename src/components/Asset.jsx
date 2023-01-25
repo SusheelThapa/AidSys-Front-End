@@ -2,6 +2,9 @@ import React from "react";
 import Header from "./common/Header";
 import Classroom from "../assets/img/classroom";
 import AssetBookingRating from "./AssetBookingRating";
+import AssetReview from "./AssetReview";
+import Footer from "./common/Footer";
+
 const Asset = () => {
   return (
     <React.Fragment>
@@ -41,7 +44,9 @@ const Asset = () => {
           </div>
         </div>
       </div>
-        <AssetBookingRating/>
+      <AssetBookingRating />
+      <AssetReview />
+      <Footer />
     </React.Fragment>
   );
 };
