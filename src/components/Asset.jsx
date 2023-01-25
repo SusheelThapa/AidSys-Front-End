@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./common/Header";
 import Classroom from "../assets/img/classroom";
+import AssetBookingRating from "./AssetBookingRating";
 const Asset = () => {
   return (
     <React.Fragment>
@@ -40,8 +41,8 @@ const Asset = () => {
           </div>
         </div>
       </div>
-      <div className="mt-40">
-        <p>part2</p>
+      <div className="mt-32">
+        <AssetBookingRating/>
       </div>
     </React.Fragment>
   );
