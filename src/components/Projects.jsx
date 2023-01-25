@@ -3,6 +3,7 @@ import Header from "./common/Header";
 import ProjectsForYou from "./projects/ProjectsForYou";
 
 import {
+  addProject,
   getAllProjects,
   getStudentDetail,
   getTokenData,
@@ -38,8 +39,10 @@ class Projects extends Component {
     });
   }
 
-  handleAddProject = (projects) => {
-    console.log(projects);
+  handleAddProject = async (project) => {
+    await addProject(project);
+    const newProject = [...this.state.projects, ...project];
+    console.log(newProject);
   };
 
   render() {
