@@ -1,6 +1,5 @@
 import React from "react";
 import NotAvailableProjects from "../NotAvailableProjects";
-import AvailableProjects from "../AvailableProjects";
 
 function ExploreAR() {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import AvailableProjects from "../AvailableProjects";
 import NotAvailableProjects from "../NotAvailableProjects";
 
 function ExploreWebDev() {

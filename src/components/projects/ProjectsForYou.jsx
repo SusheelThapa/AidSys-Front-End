@@ -1,6 +1,5 @@
 import React from "react";
 import AvailableProjects from "./AvailableProjects";
-import NotAvailableProjects from "./NotAvailableProjects";
 import ExploreWebDev from "./explore/ExploreWebDev";
 import ExploreAR from "./explore/ExploreAR";
 import ExploreAppDev from "./explore/ExploreAppDev";
