@@ -67,3 +67,11 @@ export const bookAssets = async (userId, bookedAssets) => {
   });
   return data;
 };
+
+export const addAsset = async (name) => {
+  const { data } = await axios.post(DOMAIN + "/api/assets/add", {
+    name,
+  });
+
+  return data;
+};

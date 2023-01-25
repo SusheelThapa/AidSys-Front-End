@@ -1,6 +1,24 @@
 import React from "react";
+import { useRef } from "react";
+import { addAsset } from "../services/request";
 
 function AssetsAdd() {
+  const name = useRef();
+  const description = useRef();
+
+  const handleAddAsset = async () => {
+    /**
+     * Need to create a route to add assets
+     */
+    const assetName = name.current.value;
+
+    const assetDescription = description.current.value;
+
+    await addAsset(assetName);
+
+    name.current.value = "";
+    description.current.value = "";
+  };
   return (
     <div className="my-32">
       <p className="text-3xl font-bold text-assets-100 mx-8 font-serif">
@@ -19,6 +37,7 @@ function AssetsAdd() {
                 name=""
                 id=""
                 placeholder="Name of asset"
+                ref={name}
               />
               <input
                 className="focus:outline-none border rounded-lg w-2/5 p-2 placeholder:italic "
@@ -32,16 +51,21 @@ function AssetsAdd() {
               <textarea
                 id="message"
                 rows="6"
-                class=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
+                className=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
                 placeholder="Brief description about the asset"
+                ref={description}
               ></textarea>
             </div>
           </div>
           <div className="flex justify-center mb-8">
-            <button className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl">ADD TO ASSETS</button>
+            <button
+              onClick={handleAddAsset}
+              className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl"
+            >
+              ADD TO ASSETS
+            </button>
           </div>
         </div>
-        
       </div>
     </div>
   );
