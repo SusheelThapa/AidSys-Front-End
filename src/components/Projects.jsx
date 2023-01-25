@@ -71,7 +71,7 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        <ProjectsForYou />
+        <ProjectsForYou projects={this.state.projects} />
       </React.Fragment>
     ) : (
       <Loading />
