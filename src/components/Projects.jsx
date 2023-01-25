@@ -38,6 +38,10 @@ class Projects extends Component {
     });
   }
 
+  handleAddProject = (projects) => {
+    console.log(projects);
+  };
+
   render() {
     return this.state.student ? (
       <React.Fragment>
@@ -71,7 +75,10 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        <ProjectsForYou projects={this.state.projects} />
+        <ProjectsForYou
+          onClickAddProject={this.handleAddProject}
+          projects={this.state.projects}
+        />
       </React.Fragment>
     ) : (
       <Loading />

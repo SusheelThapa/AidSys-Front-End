@@ -7,7 +7,7 @@ import ExploreDS from "./explore/ExploreDS";
 import PostProject from "./PostProject";
 import Footer from "../common/Footer";
 
-function ProjectsForYou({ projects }) {
+function ProjectsForYou({ projects, onClickAddProject }) {
   return (
     <React.Fragment>
       <div>
@@ -29,7 +29,7 @@ function ProjectsForYou({ projects }) {
       <ExploreAppDev />
       <ExploreAR />
       <ExploreDS />
-      <PostProject />
+      <PostProject onClickAddProject={onClickAddProject} />
       <Footer />
     </React.Fragment>
   );
