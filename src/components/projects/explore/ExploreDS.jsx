@@ -10,11 +10,11 @@ function ExploreDS() {
           DATA SCIENCE PROJECTS
         </h1>
         <div className="p-4 flex space-x-4 xl:space-x-12 overflow-x-scroll">
-          <AvailableProjects />
           <NotAvailableProjects />
-          <AvailableProjects />
           <NotAvailableProjects />
-          <AvailableProjects />
+          <NotAvailableProjects />
+          <NotAvailableProjects />
+          <NotAvailableProjects />
         </div>
       </div>
     </>

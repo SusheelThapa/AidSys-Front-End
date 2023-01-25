@@ -1,8 +1,13 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
 import Green from "../../assets/img/green.png";
 import Person from "../../assets/img/round-person.png";
 import classroom from "../../assets/img/classroom.png";
-function AvailableProjects() {
+function AvailableProjects({ project }) {
+  const handleLearnMore = (link) => {
+    window.location.href = link;
+  };
   return (
     <div>
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
@@ -22,7 +27,7 @@ function AvailableProjects() {
             <div className="flex">
               <img className="w-10 h-10 rounded-full" src={Person} alt="" />
               <div className="flex flex-col ml-4">
-                <h2 className="text-sm font-bold">Project Name</h2>
+                <h2 className="text-sm font-bold">{project.name}</h2>
                 <p className="text-xs">Team Name Here</p>
               </div>
             </div>
@@ -33,8 +38,7 @@ function AvailableProjects() {
             </div>
           </div>
           <div className="mt-4 mb-8 text-assets-100 font-bold text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-            voluptatem.
+            {project.description}
           </div>
           <hr />
           {/* div for buttons */}
@@ -42,7 +46,12 @@ function AvailableProjects() {
             <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
               Apply for collab
             </button>
-            <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
+            <button
+              onClick={() => {
+                handleLearnMore(project.link);
+              }}
+              className="font-bold text-sm text-assets-100 underline hover:text-indigo-400"
+            >
               Learn More
             </button>
           </div>
