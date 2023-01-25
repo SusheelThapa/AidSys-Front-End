@@ -10,11 +10,11 @@ function ExploreAR() {
           AR PROJECTS
         </h1>
         <div className="p-4 flex space-x-4 xl:space-x-12 overflow-x-scroll">
-          <AvailableProjects />
           <NotAvailableProjects />
           <NotAvailableProjects />
           <NotAvailableProjects />
-          <AvailableProjects />
+          <NotAvailableProjects />
+          <NotAvailableProjects />
         </div>
       </div>
     </>
