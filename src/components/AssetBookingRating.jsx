@@ -1,5 +1,6 @@
 import React from 'react'
-
+import Rating from "../assets/img/rating.png"
+import {AiOutlineStar} from "react-icons/ai"
 function AssetBookingRating() {
   return (
     <div>
@@ -29,7 +30,21 @@ function AssetBookingRating() {
             </div>
             {/* div for ratings */}
             <div className='w-2/5'>
-                <h2 className='text-3xl text-assets-100 font-bold font-serif'>RATINGS</h2>
+                <h2 className='text-3xl text-assets-100 font-bold font-serif mx-16 2xl:mx-64'>RATINGS</h2>
+                <div className='flex w-fit flex-col mx-auto'>
+                    {/* div for 96% */}
+                    <div className='p-6 h-80 flex justify-center rounded-xl shadow-lg border mt-8'>
+                        <img className='h-fit w-fit' src={Rating} alt="rating" />
+                    </div>
+                    {/* div for stars */}
+                    <div className='flex mx-auto mt-4 space-x-2'>
+                        <AiOutlineStar size={40}/>
+                        <AiOutlineStar size={40}/>
+                        <AiOutlineStar size={40}/>
+                        <AiOutlineStar size={40}/>
+                        <AiOutlineStar size={40}/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
