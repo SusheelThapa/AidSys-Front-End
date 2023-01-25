@@ -156,7 +156,7 @@ function PostProject({ onClickAddProject }) {
                   <textarea
                     id="message"
                     rows="6"
-                    class=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
+                    className=" p-2.5 w-full rounded-lg border focus:outline-none placeholder:italic "
                     placeholder="Details about the project"
                     ref={description}
                   ></textarea>
