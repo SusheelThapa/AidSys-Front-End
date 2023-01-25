@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./common/Header";
-import Classroom from "../assets/img/classroom";
+import Classroom from "../assets/img/classroom.png";
 const Asset = () => {
   return (
     <React.Fragment>
