@@ -22,6 +22,7 @@ import Login from "./components/Login";
 import Assets from "./components/Assets";
 import Asset from "./components/Asset";
 import Projects from "./components/Projects";
+import Project from "./components/Project";
 
 /**
  * Globally importing font awesome
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    path: "/projects/:id",
+    element: <Project />,
   },
 ]);
 
