@@ -75,3 +75,9 @@ export const addAsset = async (name) => {
 
   return data;
 };
+
+export const getAllProjects = async () => {
+  const { data } = await axios.get(DOMAIN + "/api/projects");
+
+  return data;
+};
