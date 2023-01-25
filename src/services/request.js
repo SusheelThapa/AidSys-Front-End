@@ -81,3 +81,9 @@ export const getAllProjects = async () => {
 
   return data;
 };
+
+export const getProject = async (_id) => {
+  const { data } = await axios.get(DOMAIN + "/api/projects/" + _id);
+
+  return data;
+};
