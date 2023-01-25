@@ -11,7 +11,7 @@ import AssetsAdd from "./AssetsAdd";
 import Footer from "./common/Footer";
 import Loading from "./Loading";
 
-class Asset extends Component {
+class Assets extends Component {
   state = { student: null };
 
   componentDidMount() {
@@ -73,9 +73,9 @@ class Asset extends Component {
                 <h1 className="p-4 text-assets-100 text-2xl font-serif font-bold">
                   YOUR BOOKED ASSETS
                 </h1>
-                <p>
-                  <BookedAssets />
-                </p>
+                <div>
+                  <BookedAssets assets={this.state.student.bookedAssets} />
+                </div>
               </div>
             </div>
           </div>
@@ -92,4 +92,4 @@ class Asset extends Component {
   }
 }
 
-export default Asset;
+export default Assets;
