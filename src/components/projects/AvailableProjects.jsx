@@ -29,13 +29,7 @@ function AvailableProjects({ project }) {
               <img className="w-10 h-10 rounded-full" src={Person} alt="" />
               <div className="flex flex-col ml-4">
                 <h2 className="text-sm font-bold">{project.name}</h2>
-                <p className="text-xs">Team Name Here</p>
               </div>
-            </div>
-            <div>
-              <p className="text-xs">
-                <span className="font-bold">Duration </span>: Date - Date
-              </p>
             </div>
           </div>
           <div className="mt-4 mb-8 text-assets-100 font-bold text-sm">

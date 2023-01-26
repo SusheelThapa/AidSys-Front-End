@@ -17,18 +17,20 @@ function ProjectsForYou({ projects, onClickAddProject }) {
         </h1>
       </div>
       <div className="p-4 grid grid-cols-3 gap-0.5 justify-around justify-items-center items-center">
-        {projects.map((project) => {
-          return <AvailableProjects key={project._id} project={project} />;
+        {projects.map((project, index) => {
+          if (index < 6)
+            return <AvailableProjects key={project._id} project={project} />;
+          return null;
         })}
       </div>
 
       <h2 className="mt-20 text-3xl font-bold text-assets-100 ml-16 font-serif">
         EXPLORE BY CATEGORIES
       </h2>
-      <ExploreWebDev />
-      <ExploreAppDev />
-      <ExploreAR />
-      <ExploreDS />
+      <ExploreWebDev projects={projects} start={6} end={21} />
+      <ExploreAppDev projects={projects} start={21} end={36} />
+      <ExploreAR projects={projects} start={36} end={40} />
+      <ExploreDS projects={projects} start={40} end={66} />
       <PostProject onClickAddProject={onClickAddProject} />
       <Footer />
     </React.Fragment>
