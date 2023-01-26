@@ -3,9 +3,9 @@ import notices from "../assets/img/notices.png";
 function NoticesGeneral({ notice }) {
   return (
     <div className="mx-10">
-      <div className="flex shadow-2xl border rounded-xl">
-        <div>
-          <img className="h-full rounded-l-xl" src={notices} alt="notices" />
+      <div className="flex shadow-2xl border rounded-xl m-1 mb-5 h-64">
+        <div className="flex items-center justify-center ">
+          <img className="h-3/4 rounded-l-xl mx-5" src={notices} alt="notices" />
         </div>
         <div className="flex flex-col justify-center px-4 py-2">
           <h1 className="text-2xl cursor-pointer text-assets-100 font-bold font-serif hover:text-indigo-400">

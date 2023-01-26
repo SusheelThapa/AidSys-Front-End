@@ -41,7 +41,7 @@ class Notices extends Component {
             </h1>
 
             {this.state.notices.map((notice, index) => {
-              if (index < 4)
+              if (index < 5)
                 return <NoticesGeneral key={notice._id} notice={notice} />;
               return null;
             })}
@@ -50,13 +50,13 @@ class Notices extends Component {
             <NoticesRecent
               title={"Recent Notices"}
               notices={this.state.notices}
-              start={4}
-              end={11}
+              start={5}
+              end={12}
             />
             <NoticesRecent
               title={"Opportunities"}
               notices={this.state.notices}
-              start={11}
+              start={12}
               end={18}
             />
           </div>
