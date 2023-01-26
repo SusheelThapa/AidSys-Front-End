@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import Header from "./common/Header";
 import ProjectsForYou from "./projects/ProjectsForYou";
 
-import { getStudentDetail, getTokenData } from "../services/request";
+import {
+  addProject,
+  getAllProjects,
+  getStudentDetail,
+  getTokenData,
+} from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
 class Projects extends Component {
-  state = { student: null };
+  state = { student: null, projects: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
@@ -26,7 +31,22 @@ class Projects extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getAllProjects().then((res) => {
+      if (res.success) {
+        this.setState({ projects: res.projects });
+      }
+    });
   }
+
+  handleAddProject = async (project) => {
+    if (this.state.project !== null) {
+      const newProject = [...this.state.projects, project];
+      console.log(newProject);
+      this.setState({ projects: newProject });
+    }
+    addProject(project);
+  };
 
   render() {
     return this.state.student ? (
@@ -61,7 +81,10 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        <ProjectsForYou />
+        <ProjectsForYou
+          onClickAddProject={this.handleAddProject}
+          projects={this.state.projects}
+        />
       </React.Fragment>
     ) : (
       <Loading />
