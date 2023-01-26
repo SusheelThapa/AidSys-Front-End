@@ -1,6 +1,6 @@
 import React from "react";
 import notices from "../assets/img/notices.png";
-function NoticesGeneral() {
+function NoticesGeneral({ notice }) {
   return (
     <div className="mx-10">
       <div className="flex shadow-2xl border rounded-xl">
@@ -9,18 +9,12 @@ function NoticesGeneral() {
         </div>
         <div className="flex flex-col justify-center px-4 py-2">
           <h1 className="text-2xl cursor-pointer text-assets-100 font-bold font-serif hover:text-indigo-400">
-            Notice Regarding Something
+            {notice.heading}
           </h1>
           <div className="flex justify-between mt-2">
-            <p className="text-sm text-gray-500">Date: Date</p>
-            <p className="text-sm text-gray-500">Someone from the office</p>
+            <p className="text-sm text-gray-500">Date: {notice.date}</p>
           </div>
-          <p className="text-sm mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            aut optio, asperiores numquam atque illo dicta soluta repellat
-            mollitia, voluptates, obcaecati quis aperiam alias sint! Sequi at
-            autem reprehenderit dolorem?
-          </p>
+          <p className="text-sm mt-3">{notice.description}</p>
           <div className="flex justify-end mt-4">
             <button className="font-bold hover:scale-110 duration-200 text-assets-100 underline hover:text-indigo-400">
               Learn more

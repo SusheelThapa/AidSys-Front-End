@@ -8,9 +8,10 @@ import Footer from "./common/Footer";
 
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
+import { getNotices } from "../services/notices";
 
 class Notices extends Component {
-  state = { student: null };
+  state = { student: null, notices: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
@@ -24,6 +25,10 @@ class Notices extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getNotices().then((notices) => {
+      this.setState({ notices });
+    });
   }
   render() {
     return this.state.student ? (
@@ -35,10 +40,11 @@ class Notices extends Component {
               General Notices
             </h1>
 
-            <NoticesGeneral />
-            <NoticesGeneral />
-            <NoticesGeneral />
-            <NoticesGeneral />
+            {this.state.notices.map((notice, index) => {
+              if (index < 4)
+                return <NoticesGeneral key={notice._id} notice={notice} />;
+              return null;
+            })}
           </div>
           <div className="space-y-10 mb-60">
             <NoticesRecent title={"Recent Notices"} />
