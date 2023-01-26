@@ -1,18 +1,45 @@
-import React from "react";
-import Header from "./common/Header";
+import React from 'react'
+import Header from './common/Header'
+import { BiAddToQueue } from 'react-icons/bi'
 
 const Profile = () => {
+  function ProfilePage02(e) {
+    console.log('hi')
+  }
   return (
+    //************* 09 *****************
     <React.Fragment>
-      <Header />
-      <div className="background-image">
-        <img id='graduate' src='https://cdn4.iconfinder.com/data/icons/education-business-part-1/513/1-512.png'></img>
-        {/* <img src="E:\Locus\AidSys-Front-End\src\assets\img\classroompic.jpg"></img> */}
-      <button type="button-y" class="btn btn-warning">EXPLORE NOW</button>
-      <div className="motto">Our Motto is.....</div>
+      <Header/>
+      <div className='background-img-09'>
+      <div className='user-photo'><img src='https://th.bing.com/th/id/OIP.rrH-N7kJWcFhYxecmYpCaQHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.3&pid=1.7'></img></div>
+      <div className='container-left-09'>
+        <ul>
+          <li ><a className='list-profile' href='#'> Profile Info</a></li>
+          <li ><a className='list-profile' href='#'>Your Projects</a></li>
+          <li ><a className='list-profile' href='#'>Your Assets</a></li>
+          <li ><a className='list-profile' href='#'>Wishlist</a></li>
+          <li ><a className='list-profile' href='#'>Log Out</a></li>
+        </ul>
+      </div>
+      <div className='user-name'><h1 className='bold-text username'>Ujjwal Jha</h1><p className='white-text'>Faculty Here  XXXX year</p></div>
+      <div className='container-user-desc'>
+        <h1 className='bold-text user-desc-details'>Interests</h1>
+        <p className='user-desc-details'>FrontEnd, BackEnd, Graphics Designing</p>
+        <h1 className='bold-text user-desc-details'>Bio</h1>
+        <p className='user-desc-details'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+           eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget arcu
+           dictum varius duis at consectetur lorem. Porttitor lacus luctus
+           accumsan tortor posuere. Tellus id interdum velit laoreet id donec
+           ultrices tincidunt arcu. Massa tempor nec feugiat nisl pretium fusce
+           id velit ut. Etiam erat velit scelerisque in dictum non consectetur a.
+           Lacinia at quis risus sed vulputate odio ut. Vulputate dignissim
+           suspendisse in est ante in nibh mauris.</p>
+        <h1 className='bold-text user-desc-details'>Contact Details</h1>
+        <p className='user-desc-details'>example@gmail.com</p>
+      </div>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
