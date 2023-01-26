@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './common/Header'
 import { BiAddToQueue } from 'react-icons/bi'
+import Footer from './common/Footer'
 
 const Profile = () => {
   function ProfilePage02(e) {
@@ -38,6 +39,7 @@ const Profile = () => {
         <p className='user-desc-details'>example@gmail.com</p>
       </div>
       </div>
+      <Footer/>
     </React.Fragment>
   )
 }
