@@ -23,7 +23,7 @@ const Header = ({ studentName }) => {
       </div>
       <div className="bg-transparent my-4 mx-8">
         <button className="bg-transparent font-medium py-1 px-4 border text-yellow-400 hover:font-bold ">
-          {studentName}
+          <Link to={"/profile"}>{studentName}</Link>
         </button>
       </div>
     </div>

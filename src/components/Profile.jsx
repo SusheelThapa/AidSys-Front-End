@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
@@ -17,30 +18,29 @@ const Profile = () => {
         <div className="container-left-09">
           <ul>
             <li>
-              <a className="list-profile" href="#">
-                {" "}
+              <Link className="list-profile" href="#">
                 Profile Info
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="list-profile" href="#">
+              <Link className="list-profile" href="#">
                 Your Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="list-profile" href="#">
+              <Link className="list-profile" href="#">
                 Your Assets
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="list-profile" href="#">
+              <Link className="list-profile" href="#">
                 Wishlist
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="list-profile" href="#">
+              <Link className="list-profile" href="#">
                 Log Out
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
