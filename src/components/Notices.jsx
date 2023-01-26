@@ -1,27 +1,22 @@
 import React, { Component } from "react";
 import Header from "./common/Header";
 
-import { getStudentDetail, getTokenData } from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
 import NoticesGeneral from "./NoticesGeneral";
 import NoticesRecent from "./NoticesRecent";
 import Footer from "./common/Footer";
+
+import { doesTokenExist, getTokenData } from "../services/token";
+import { getStudentDetail } from "../services/students";
 
 class Notices extends Component {
   state = { student: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            console.log(student);
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -46,12 +41,11 @@ class Notices extends Component {
             <NoticesGeneral />
           </div>
           <div className="space-y-10 mb-60">
-
-          <NoticesRecent  title={"Recent Notices"}/>
-          <NoticesRecent title={"Opportunities"}/>
+            <NoticesRecent title={"Recent Notices"} />
+            <NoticesRecent title={"Opportunities"} />
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </React.Fragment>
     ) : (
       <Loading />
