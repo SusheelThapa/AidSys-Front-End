@@ -49,7 +49,7 @@ class Homepage extends Component {
               className="mt-4 bg-transparent text-yellow-400 hover:text-yellow-600 font-bold underline"
               to="#"
             >
-              Explore More
+              <Link to={"/projects"}>Explore More</Link>
             </Link>
             <p className="font-bold bg-transparent  text-white mt-2 mb-4 text-2xl">
               Motto goes here!
