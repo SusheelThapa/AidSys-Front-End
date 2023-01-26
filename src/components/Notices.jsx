@@ -6,6 +6,7 @@ import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
 import NoticesGeneral from "./NoticesGeneral";
 import NoticesRecent from "./NoticesRecent";
+import Footer from "./common/Footer";
 
 class Notices extends Component {
   state = { student: null };
@@ -44,12 +45,13 @@ class Notices extends Component {
             <NoticesGeneral />
             <NoticesGeneral />
           </div>
-          <div className="space-y-10">
+          <div className="space-y-10 mb-60">
 
-          <NoticesRecent  title={"Notices"}/>
+          <NoticesRecent  title={"Recent Notices"}/>
           <NoticesRecent title={"Opportunities"}/>
           </div>
         </div>
+        <Footer/>
       </React.Fragment>
     ) : (
       <Loading />
