@@ -7,6 +7,7 @@ import Loading from "./Loading";
 import NoticesGeneral from "./NoticesGeneral";
 import NoticesRecent from "./NoticesRecent";
 import Footer from "./common/Footer";
+import NoticesImportant from "./NoticesImportant";
 
 class Notices extends Component {
   state = { student: null };
@@ -34,7 +35,8 @@ class Notices extends Component {
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.username.toUpperCase()} />
-        <div className="flex mt-16">
+        <NoticesImportant/>
+        <div className="flex mt-32">
           <div className="w-[70%] space-y-20">
             <h1 className="text-3xl mx-10 font-bold font-serif text-assets-100">
               General Notices
