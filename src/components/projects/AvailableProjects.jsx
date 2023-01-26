@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Green from "../../assets/img/green.png";
 import Person from "../../assets/img/round-person.png";
 import classroom from "../../assets/img/classroom.png";
+
 function AvailableProjects({ project }) {
   const handleLearnMore = (link) => {
     window.location.href = link;

@@ -17,31 +17,32 @@ function PostProject({ onClickAddProject }) {
     const project = {
       name: name.current.value,
       description: description.current.value,
-      member: [],
       link: projectLink.current.value,
-      tags: ["Other"],
+      owner: "",
+      catgories: ["Other"],
+      teammember: [],
     };
 
     if (memberOne.current.value !== null) {
-      project.member.push({
+      project.teammember.push({
         name: memberOne.current.value,
         link: memberOneLink.current.value,
       });
     }
     if (memberTwo.current.value !== null) {
-      project.member.push({
+      project.teammember.push({
         name: memberTwo.current.value,
         link: memberTwoLink.current.value,
       });
     }
     if (memberThree.current.value !== null) {
-      project.member.push({
+      project.teammember.push({
         name: memberThree.current.value,
         link: memberThreeLink.current.value,
       });
     }
     if (memberFour.current.value !== null) {
-      project.member.push({
+      project.teammember.push({
         name: memberFour.current.value,
         link: memberFourLink.current.value,
       });
