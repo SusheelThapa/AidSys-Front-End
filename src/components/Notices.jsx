@@ -4,6 +4,7 @@ import Header from "./common/Header";
 import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
+import NoticesGeneral from "./NoticesGeneral";
 
 class Notices extends Component {
   state = { student: null };
@@ -31,7 +32,18 @@ class Notices extends Component {
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.username.toUpperCase()} />
-        <h1>Other Code for notices goes here</h1>
+        <div className="flex mt-16">
+          <div className="w-[70%] space-y-20">
+            <h1 className="text-3xl mx-10 font-bold font-serif text-assets-100">
+              General Notices
+            </h1>
+
+            <NoticesGeneral />
+            <NoticesGeneral />
+            <NoticesGeneral />
+            <NoticesGeneral />
+          </div>
+        </div>
       </React.Fragment>
     ) : (
       <Loading />
