@@ -1,30 +1,26 @@
 import React, { Component } from "react";
-import Header from "./common/Header";
 
-import { getStudentDetail, getTokenData } from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
+import Header from "./common/Header";
+import Footer from "./common/Footer";
+import Loading from "./Loading";
+
+import AssetsRecommendation from "./AssetsRecommendation";
 import BookedAssets from "./BookedAssets";
 import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
-import AssetsRecommendation from "./AssetsRecommendation";
 import AssetsAdd from "./AssetsAdd";
-import Footer from "./common/Footer";
-import Loading from "./Loading";
+
+import { doesTokenExist, getTokenData } from "../services/token.js";
+import { getStudentDetail } from "../services/students.js";
 
 class Assets extends Component {
   state = { student: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            console.log(student);
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -37,7 +33,7 @@ class Assets extends Component {
   render() {
     return this.state.student ? (
       <div>
-        <Header studentName={this.state.student.username.toUpperCase()} />
+        <Header studentName={this.state.student.name} />
         <div className="h-screen bg-gray-200">
           {/* page one */}
           <div className="flex space-x-6 xl:space-x-32">
