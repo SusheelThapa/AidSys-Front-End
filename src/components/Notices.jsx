@@ -5,6 +5,7 @@ import { getStudentDetail, getTokenData } from "../services/request";
 import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
 import NoticesGeneral from "./NoticesGeneral";
+import NoticesRecent from "./NoticesRecent";
 
 class Notices extends Component {
   state = { student: null };
@@ -42,6 +43,11 @@ class Notices extends Component {
             <NoticesGeneral />
             <NoticesGeneral />
             <NoticesGeneral />
+          </div>
+          <div className="space-y-10">
+
+          <NoticesRecent  title={"Notices"}/>
+          <NoticesRecent title={"Opportunities"}/>
           </div>
         </div>
       </React.Fragment>
