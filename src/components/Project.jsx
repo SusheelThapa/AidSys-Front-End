@@ -77,7 +77,7 @@ class Project extends Component {
         <Header studentName={this.state.student.name} />
         <div className="mx-10 my-12">
           <h1 className="text-3xl text-assets-100 font-bold  font-serif">
-            Project Name
+            {this.state.project.name}
           </h1>
           <div className="flex space-x-10 2xl:space-x-48">
             <div className="mt-4 w-3/5">

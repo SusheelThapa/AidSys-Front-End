@@ -29,8 +29,8 @@ function ProjectsForYou({ projects, onClickAddProject }) {
       </h2>
       <ExploreWebDev projects={projects} start={6} end={21} />
       <ExploreAppDev projects={projects} start={21} end={36} />
-      <ExploreAR projects={projects} start={36} end={40} />
-      <ExploreDS projects={projects} start={40} end={66} />
+      <ExploreAR projects={projects} start={36} end={50} />
+      <ExploreDS projects={projects} start={50} end={66} />
       <PostProject onClickAddProject={onClickAddProject} />
       <Footer />
     </React.Fragment>
