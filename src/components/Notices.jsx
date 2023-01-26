@@ -47,8 +47,18 @@ class Notices extends Component {
             })}
           </div>
           <div className="space-y-10 mb-60">
-            <NoticesRecent title={"Recent Notices"} />
-            <NoticesRecent title={"Opportunities"} />
+            <NoticesRecent
+              title={"Recent Notices"}
+              notices={this.state.notices}
+              start={4}
+              end={11}
+            />
+            <NoticesRecent
+              title={"Opportunities"}
+              notices={this.state.notices}
+              start={11}
+              end={18}
+            />
           </div>
         </div>
         <Footer />
