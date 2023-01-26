@@ -22,7 +22,7 @@ function NoticesGeneral() {
             autem reprehenderit dolorem?
           </p>
           <div className="flex justify-end mt-4">
-            <button className="font-bold text-assets-100 underline hover:text-indigo-400">
+            <button className="font-bold hover:scale-110 duration-200 text-assets-100 underline hover:text-indigo-400">
               Learn more
             </button>
           </div>
