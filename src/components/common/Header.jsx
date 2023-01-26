@@ -15,7 +15,7 @@ const Header = ({ studentName }) => {
           <Link to={"/assets"}>Assets</Link>
         </button>
         <button className="bg-transparent text-yellow-400 hover:font-bold hover:text-yellow-600">
-          <Link>Notice Board</Link>
+          <Link to={"/notices"}>Notice Board</Link>
         </button>
         <button className="bg-transparent text-yellow-400 hover:font-bold hover:text-yellow-600">
           <Link to={"/projects"}>Projects</Link>

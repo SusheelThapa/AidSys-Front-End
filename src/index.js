@@ -29,7 +29,11 @@ import Project from "./components/Project";
  */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+
+import Notices from "./components/Notices";
+
 import Profile from "./components/Profile";
+
 
 library.add(fas);
 
@@ -62,6 +66,9 @@ const router = createBrowserRouter([
     element: <Projects />,
   },
   {
+    path: "/notices",
+    element: <Notices />,
+},{
 
     path: "/profile",
     element: <Profile />,
