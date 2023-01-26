@@ -8,9 +8,90 @@
   font-family: "Montserrat", sans-serif;
   color: #303433;
 }
-.projectsBg {
-  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("/src/assets/img/classroom.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+
+
+/* 09 */
+
+.bold-text{
+  font-size: 25px;
+  font-weight: bolder;
+  color: #7541D1;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+.white-text{
+  color: #fff;
+  font-size: 50px;
+}
+.background-img-09{
+  background:rgba(0,0,0,0.3)url('https://th.bing.com/th/id/R.3a16324f4ac5afb604259bc779b5da9a?rik=G2FbNGOeWwbfaQ&riu=http%3a%2f%2fpcampus.edu.np%2fwp-content%2fuploads%2f2015%2f07%2fBSC16711.jpg&ehk=ij%2fNj635u0XBDQGf%2fXHiw%2fVDjGyST1RfgKiLO7NQs1g%3d&risl=&pid=ImgRaw&r=0');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  height: 100vh;
+}
+.user-photo{
+  position: absolute;
+  transform: translate(-50,-50);
+  left: 17%;
+  top: 20%;
+  height: 150px;
+  width: 150px;
+}
+.container-left-09{
+  background-color: #fff;
+  margin-left: 10px;
+  border-radius: 6px;
+  position: absolute;
+  transform: translate(-50,-50);
+  left: 11%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list-profile{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.user-name{
+  background-color: transparent;
+  position: absolute;
+  transform: translate(-50,-50);
+  left: 38%;
+  top: 20%;
+  width: 300px;
+  height: 150px;
+}
+.white-text{
+  font-size: 20px;
+  font-weight: bold;
+}
+.username{
+  font-size: 50px;
+  color: #937dec;
+  font-weight: bolder;
+}
+.container-user-desc{
+  background-color: #fff;
+  margin-left: 10px;
+  border-radius: 6px;
+  position: absolute;
+  transform: translate(-50,-50);
+  left: 35%;
+  top: 40%;
+  width: 900px;
+  height: 500px;
+}
+.user-desc-details{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
