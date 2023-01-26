@@ -1,9 +1,12 @@
 import React from "react";
+
 import RoundPerson from "../assets/img/round-person.png";
+
 function ProjectTeam({ teamMember }) {
   const handleName = (link) => {
     window.location.href = link;
   };
+
   return (
     <div className="mt-20 mx-10">
       <h1 className="text-3xl text-assets-100 font-bold  font-serif">

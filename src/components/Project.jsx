@@ -1,21 +1,23 @@
 import React, { Component } from "react";
-import Header from "./common/Header";
 
-import {
-  getProject,
-  getStudentDetail,
-  getTokenData,
-} from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
+import Header from "./common/Header";
 import Loading from "./Loading";
+import Footer from "./common/Footer";
+
 import Laptop from "../assets/img/laptop.png";
 import LaptopTwo from "../assets/img/laptop2.png";
 import LaptopThree from "../assets/img/laptop3.png";
+
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+
 import ProjectTeam from "./ProjectTeam";
 import ProjectVacancy from "./ProjectVacancy";
 import ProjectApplication from "./ProjectApplication";
-import Footer from "./common/Footer";
+
+import { doesTokenExist, getTokenData } from "../services/token";
+import { getStudentDetail } from "../services/students";
+import { getProject } from "../services/projects";
+
 class Project extends Component {
   state = {
     student: null,
@@ -42,6 +44,7 @@ class Project extends Component {
 
     this.setState({ currentSliderIndex: newSliderIndex });
   };
+
   nextSlide = () => {
     const isLastSlide =
       this.state.currentSliderIndex === this.state.slider.length - 1;
@@ -51,15 +54,9 @@ class Project extends Component {
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            console.log(student);
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -70,14 +67,14 @@ class Project extends Component {
 
     const projectId = window.location.pathname.split("/")[2];
 
-    getProject(projectId).then((res) => {
-      this.setState({ project: res.project[0] });
+    getProject(projectId).then((project) => {
+      this.setState({ project });
     });
   }
   render() {
     return this.state.student ? (
       <React.Fragment>
-        <Header studentName={this.state.student.username.toUpperCase()} />
+        <Header studentName={this.state.student.name} />
         <div className="mx-10 my-12">
           <h1 className="text-3xl text-assets-100 font-bold  font-serif">
             Project Name
@@ -110,7 +107,7 @@ class Project extends Component {
             </div>
           </div>
         </div>
-        <ProjectTeam teamMember={this.state.project.member} />
+        <ProjectTeam teamMember={this.state.project.teammember} />
         <ProjectVacancy />
         <ProjectApplication />
         <Footer />
