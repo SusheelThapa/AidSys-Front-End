@@ -11,10 +11,9 @@ function AssetsAdd() {
 
     const assetDescription = description.current.value;
 
-    await addAsset(assetName, assetDescription);
-
-    name.current.value = "";
-    description.current.value = "";
+    addAsset(assetName, assetDescription).then(() => {
+      window.location.reload();
+    });
   };
 
   return (

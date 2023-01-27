@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Addmore from "../assets/img/addMore.svg";
 
@@ -9,7 +10,11 @@ function BookedAssets({ assets }) {
     <div>
       <div className="grid grid-cols-3 space-x-8  ">
         {assets.map((asset) => {
-          return <CommonBookedAssets key={asset._id} asset={asset} />;
+          return (
+            <Link to={`/assets/${asset._id}`} key={asset._id}>
+              <CommonBookedAssets key={asset._id} asset={asset} />
+            </Link>
+          );
         })}
 
         <div className="group mx-0 h-56">

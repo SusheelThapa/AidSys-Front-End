@@ -10,7 +10,12 @@ import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
-import { getAsset } from "../services/assets";
+import {
+  bookAsset,
+  getAsset,
+  reviewAsset,
+  unBookAsset,
+} from "../services/assets";
 
 class Asset extends Component {
   state = { student: null, asset: null };
@@ -40,8 +45,31 @@ class Asset extends Component {
     return "disabled";
   }
 
+  handleBookAsset = (type) => {
+    const { student, asset } = this.state;
+
+    if (type === "book") {
+      bookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    } else if (type === "unbook") {
+      unBookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    }
+  };
+
+  handlePostReview = (reviewMessage) => {
+    const { student, asset } = this.state;
+
+    reviewAsset(student._id, asset._id, reviewMessage).then(() => {
+      window.location.reload();
+    });
+  };
+
   render() {
-    console.log(this.state.asset);
+    const { asset } = this.state;
+
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.name} />
@@ -79,19 +107,26 @@ class Asset extends Component {
                   : "NOT AVAILABLE"}
               </button>
               <button
+                onClick={() =>
+                  this.handleBookAsset(
+                    asset.status === "Avaliable" ? "book" : "unbook"
+                  )
+                }
                 className={
-                  this.assetBookingClass() +
                   " px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg"
                 }
               >
-                BOOK
+                {this.state.asset.status === "Avaliable" ? "BOOK" : "UNBOOK"}
               </button>
             </div>
           </div>
         </div>
 
         <AssetBookingRating bookings={this.state.asset.previousBooking} />
-        <AssetReview reviews={this.state.asset.review} />
+        <AssetReview
+          reviews={this.state.asset.review}
+          onPostReview={this.handlePostReview}
+        />
         <Footer />
       </React.Fragment>
     ) : (

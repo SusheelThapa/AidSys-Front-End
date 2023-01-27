@@ -15,11 +15,10 @@ class App extends Component {
           getStudentDetail(student._id).then((detail) => {
             this.setState({ student: detail });
           });
-        } else {
-          localStorage.clear();
-
-          window.location.href = "http://localhost:3000/login";
         }
+        localStorage.clear();
+
+        window.location.href = "http://localhost:3000/login";
       });
     } else {
       window.location.href = "http://localhost:3000/login";
@@ -27,7 +26,7 @@ class App extends Component {
   }
   render() {
     const { student } = this.state;
-    return student ? <Homepage student={this.state.student} /> : <Loading />;
+    return student ? <Homepage /> : <Loading />;
   }
 }
 

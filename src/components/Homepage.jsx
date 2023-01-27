@@ -3,43 +3,16 @@ import React, { Component } from "react";
 import Header from "./common/Header";
 import Hero from "./Hero";
 
-import Loading from "./Loading";
-
-import { doesTokenExist, getTokenData } from "../services/token";
-import { getStudentDetail } from "../services/students";
-
 class Homepage extends Component {
-  state = { student: null };
-
-  componentDidMount() {
-    if (doesTokenExist()) {
-      getTokenData().then((res) => {
-        getStudentDetail(res._id).then((student) => {
-          this.setState({ student });
-        });
-      });
-    } else {
-      /**
-       * TODO: Redirect to login page
-       */
-    }
-  }
-
   render() {
-    return this.state.student ? (
+    const { student } = this.props;
+    return (
       <div
         id="homepage"
         className="flex flex-col justify-between h-screen projectsBg"
       >
-        <Header
-          studentName={this.state.student.name}
-          studentId={this.state.student._id}
-        />
+        <Header studentName={student.name} studentId={student._id} />
         <Hero />
-
-        {/**
-         * TODO: Refactor below content into some components
-         */}
 
         <div className="flex justify-end">
           <div
@@ -52,8 +25,6 @@ class Homepage extends Component {
           </div>
         </div>
       </div>
-    ) : (
-      <Loading />
     );
   }
 }
