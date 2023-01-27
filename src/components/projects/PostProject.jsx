@@ -63,7 +63,7 @@ function PostProject({ onClickAddProject }) {
               <div className="flex flex-col mt-10">
                 <div className="px-6 flex space-x-4 ">
                   <input
-                    className="focus:outline-none border rounded-lg w-3/5 p-2 placeholder:italic "
+                    className="focus:outline-none border rounded-lg w-full p-2 placeholder:italic "
                     type="text"
                     name=""
                     id=""
@@ -71,7 +71,17 @@ function PostProject({ onClickAddProject }) {
                     ref={name}
                   />
                 </div>
-                <div className="px-6 flex space-x-4 mt-8">
+                <div className="px-6 flex space-x-4 mt-4 ">
+                  <input
+                    className="focus:outline-none border rounded-lg w-full p-2 placeholder:italic "
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Project Link"
+                    ref={projectLink}
+                  />
+                </div>
+                <div className="px-6 flex space-x-4 mt-4">
                   <input
                     className="focus:outline-none border rounded-lg w-3/5 p-2 placeholder:italic "
                     type="text"
@@ -143,16 +153,7 @@ function PostProject({ onClickAddProject }) {
                     ref={memberFourLink}
                   />
                 </div>
-                <div className="px-6 flex space-x-4 mt-2 mb-6 ">
-                  <input
-                    className="focus:outline-none border rounded-lg w-full p-2 placeholder:italic "
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="Project Link"
-                    ref={projectLink}
-                  />
-                </div>
+
                 <div className="relative px-6 mb-3">
                   <textarea
                     id="message"
