@@ -15,6 +15,13 @@ class Profile extends Component {
       console.log(student);
     });
   }
+
+  handleLogOut() {
+    localStorage.clear();
+
+    window.location.href = "http://localhost:3000";
+  }
+
   render() {
     const { student } = this.state;
     return this.state.student ? (
@@ -35,22 +42,17 @@ class Profile extends Component {
                 </Link>
               </li>
               <li>
-                <Link className="list-profile" href="#">
+                <Link className="list-profile" to={"/projects"}>
                   Your Projects
                 </Link>
               </li>
               <li>
-                <Link className="list-profile" href="#">
+                <Link className="list-profile" to={"/assets"}>
                   Your Assets
                 </Link>
               </li>
               <li>
-                <Link className="list-profile" href="#">
-                  Wishlist
-                </Link>
-              </li>
-              <li>
-                <Link className="list-profile" href="#">
+                <Link className="list-profile" onClick={this.handleLogOut}>
                   Log Out
                 </Link>
               </li>
