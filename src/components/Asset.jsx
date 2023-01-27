@@ -10,7 +10,7 @@ import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
-import { bookAsset, getAsset } from "../services/assets";
+import { bookAsset, getAsset, unBookAsset } from "../services/assets";
 
 class Asset extends Component {
   state = { student: null, asset: null };
@@ -40,16 +40,23 @@ class Asset extends Component {
     return "disabled";
   }
 
-  handleBookAsset = () => {
-    alert("Button Clicked");
+  handleBookAsset = (type) => {
     const { student, asset } = this.state;
-    bookAsset(student._id, asset._id).then((res) => {
-      window.location.href = "http://localhost:3000/assets";
-    });
+
+    if (type === "book") {
+      bookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    } else if (type === "unbook") {
+      unBookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    }
   };
 
   render() {
-    console.log(this.state.asset);
+    const { asset } = this.state;
+
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.name} />
@@ -87,13 +94,16 @@ class Asset extends Component {
                   : "NOT AVAILABLE"}
               </button>
               <button
-                onClick={this.handleBookAsset}
+                onClick={() =>
+                  this.handleBookAsset(
+                    asset.status === "Avaliable" ? "book" : "unbook"
+                  )
+                }
                 className={
-                  this.assetBookingClass() +
                   " px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg"
                 }
               >
-                BOOK
+                {this.state.asset.status === "Avaliable" ? "BOOK" : "UNBOOK"}
               </button>
             </div>
           </div>
