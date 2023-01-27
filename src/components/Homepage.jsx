@@ -29,7 +29,7 @@ class Homepage extends Component {
 
   render() {
     return this.state.student ? (
-      <div id="homepage" className="flex flex-col justify-between h-screen">
+      <div id="homepage" className="flex flex-col justify-between h-screen projectsBg">
         <Header studentName={this.state.student.name} studentId={this.state.student._id} />
         <Hero />
 
