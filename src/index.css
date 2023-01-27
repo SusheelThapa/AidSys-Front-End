@@ -20,15 +20,23 @@
   margin-bottom: 10px;
 }
 .white-text{
-  color: #fff;
+  color: #00000099;
   font-size: 50px;
 }
 .background-img-09{
-  background:rgba(0,0,0,0.3)url('https://th.bing.com/th/id/R.3a16324f4ac5afb604259bc779b5da9a?rik=G2FbNGOeWwbfaQ&riu=http%3a%2f%2fpcampus.edu.np%2fwp-content%2fuploads%2f2015%2f07%2fBSC16711.jpg&ehk=ij%2fNj635u0XBDQGf%2fXHiw%2fVDjGyST1RfgKiLO7NQs1g%3d&risl=&pid=ImgRaw&r=0');
+  background:rgba(0,0,0,0);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: darken;
   height: 100vh;
+}
+.projectsBg{
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+  url(./assets/img/classroom.png);
+  /* background-image: url("./assets/img/classroom.png"); */
+  background-repeat: no-repeat;
+background-size: cover;
+
 }
 .user-photo{
   position: absolute;
@@ -45,6 +53,7 @@
   position: absolute;
   transform: translate(-50,-50);
   left: 11%;
+  box-shadow: 0 0 50px 10px rgb(0,0,0,0.2);
   top: 50%;
   width: 300px;
   height: 300px;
@@ -86,6 +95,7 @@
   top: 40%;
   width: 900px;
   height: 500px;
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
 }
 .user-desc-details{
   padding-left: 15px;
