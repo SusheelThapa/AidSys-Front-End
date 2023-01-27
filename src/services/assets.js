@@ -8,6 +8,11 @@ export const getAllAssets = async () => {
   return data;
 };
 
+export const getAsset = async (_id) => {
+  const { data } = await axios.get(DOMAIN + "/api/assets/" + _id);
+  return data;
+};
+
 export const addAsset = async (name, description) => {
   const { data } = await axios.post(DOMAIN + "/api/assets/add", {
     name,

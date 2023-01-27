@@ -10,9 +10,10 @@ import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
+import { getAsset } from "../services/assets";
 
 class Asset extends Component {
-  state = { student: null };
+  state = { student: null, asset: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
@@ -26,6 +27,10 @@ class Asset extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getAsset(window.location.pathname.split("/")[2]).then((asset) => {
+      this.setState({ asset });
+    });
   }
 
   render() {
@@ -42,9 +47,11 @@ class Asset extends Component {
           </div>
           <div className="flex flex-col p-6 ml-6 items-center justify-center w-1/2">
             <h1 className="text-assets-100 font-bold text-3xl font-serif mb-8">
-              Name of the Asset
+              {this.state.asset.name}
             </h1>
             <p className="text-xl font-bold">
+              {this.state.asset.description}
+              <br />
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
               eveniet rem adipisci obcaecati doloribus tempora reprehenderit
               nobis dolorum suscipit dicta. Lorem ipsum dolor sit amet,
