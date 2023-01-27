@@ -30,3 +30,12 @@ export const bookAsset = async (studentID, assetID) => {
   console.log(data);
   return data;
 };
+
+export const unBookAsset = async (studentID, assetID) => {
+  const { data } = await axios.post(DOMAIN + "/api/assets/unbook", {
+    studentID,
+    assetID,
+  });
+  console.log(data);
+  return data;
+};
