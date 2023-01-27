@@ -43,7 +43,7 @@ class Projects extends Component {
   render() {
     return this.state.student ? (
       <React.Fragment>
-        <div className="bg-gray-500 h-screen projectsBg">
+        <div className="bg-gray-500 h-screen projectsBgLaptop">
           <Header
             studentName={this.state.student.name}
             studentId={this.state.student._id}

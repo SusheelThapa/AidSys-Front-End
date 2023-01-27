@@ -33,7 +33,13 @@
 .projectsBg{
   background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
   url(./assets/img/classroom.png);
-  /* background-image: url("./assets/img/classroom.png"); */
+  background-repeat: no-repeat;
+background-size: cover;
+
+}
+.projectsBgLaptop{
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+  url(./assets/img/laptop.png);
   background-repeat: no-repeat;
 background-size: cover;
 
