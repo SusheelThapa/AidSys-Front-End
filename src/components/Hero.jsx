@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import Student from "../assets/img/student.png";
 
 const Hero = () => {
@@ -7,15 +10,12 @@ const Hero = () => {
       <div className="mt-16">
         <img className="w-80" src={Student} alt="Student" />
       </div>
-
-      <input
-        className="w-96 bg-white rounded-lg shadow-lg p-2 focus:outline-none"
-        type="text"
-        placeholder="Search for anything here"
-      />
-      <button className="py-2 px-4 mt-4 bg-yellow-500 shadow-lg border border-yellow-800 hover:bg-yellow-600 font-bold">
-        SEARCH
-      </button>
+      <Link
+        className="mt-4 bg-transparent text-blue-400 hover:text-blue-600 font-bold  text-2xl "
+        to={"/projects"}
+      >
+        <p className="text-blue-400 bg-yellow-400 px-5 py-3 rounded-xl hover:bg-yellow-300">Explore More</p>
+      </Link>
     </div>
   );
 };
