@@ -10,9 +10,15 @@ import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
+import {
+  bookAsset,
+  getAsset,
+  reviewAsset,
+  unBookAsset,
+} from "../services/assets";
 
 class Asset extends Component {
-  state = { student: null };
+  state = { student: null, asset: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
@@ -26,9 +32,44 @@ class Asset extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getAsset(window.location.pathname.split("/")[2]).then((asset) => {
+      this.setState({ asset });
+    });
   }
 
+  assetBookingClass() {
+    if (this.state.asset.status === "Avaliable") {
+      return null;
+    }
+    return "disabled";
+  }
+
+  handleBookAsset = (type) => {
+    const { student, asset } = this.state;
+
+    if (type === "book") {
+      bookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    } else if (type === "unbook") {
+      unBookAsset(student._id, asset._id).then((res) => {
+        window.location.href = "http://localhost:3000/assets";
+      });
+    }
+  };
+
+  handlePostReview = (reviewMessage) => {
+    const { student, asset } = this.state;
+
+    reviewAsset(student._id, asset._id, reviewMessage).then(() => {
+      window.location.reload();
+    });
+  };
+
   render() {
+    const { asset } = this.state;
+
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.name} />
@@ -42,9 +83,11 @@ class Asset extends Component {
           </div>
           <div className="flex flex-col p-6 ml-6 items-center justify-center w-1/2">
             <h1 className="text-assets-100 font-bold text-3xl font-serif mb-8">
-              Name of the Asset
+              {this.state.asset.name}
             </h1>
             <p className="text-xl font-bold">
+              {this.state.asset.description}
+              <br />
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
               eveniet rem adipisci obcaecati doloribus tempora reprehenderit
               nobis dolorum suscipit dicta. Lorem ipsum dolor sit amet,
@@ -53,23 +96,37 @@ class Asset extends Component {
               ullam perspiciatis.
             </p>
             <div className="flex space-x-4 xl:space-x-10 mt-10">
-              <button className="px-4 py-2 font-bold text-xl text-white bg-green-700 hover:bg-green-600 w-60 rounded-lg h-20">
-                AVAILABLE
+              <button
+                className={
+                  "px-4 py-2 font-bold text-xl text-white bg-green-700 hover:bg-green-600 w-60 rounded-lg h-20 " +
+                  this.assetBookingClass()
+                }
+              >
+                {this.state.asset.status === "Avaliable"
+                  ? "AVAILABLE"
+                  : "NOT AVAILABLE"}
               </button>
-              <button className="px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg">
-                BOOK
-              </button>
-            </div>
-            <div className="mt-8 flex  ">
-              <button className="px-4 py-2 font-bold text-xl text-assets-200 w-60 h-20 rounded-lg border hover:bg-gray-100 ">
-                Add to Wishlist
+              <button
+                onClick={() =>
+                  this.handleBookAsset(
+                    asset.status === "Avaliable" ? "book" : "unbook"
+                  )
+                }
+                className={
+                  " px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg"
+                }
+              >
+                {this.state.asset.status === "Avaliable" ? "BOOK" : "UNBOOK"}
               </button>
             </div>
           </div>
         </div>
 
-        <AssetBookingRating />
-        <AssetReview />
+        <AssetBookingRating bookings={this.state.asset.previousBooking} />
+        <AssetReview
+          reviews={this.state.asset.review}
+          onPostReview={this.handlePostReview}
+        />
         <Footer />
       </React.Fragment>
     ) : (

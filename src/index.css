@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -12,54 +13,60 @@
 
 /* 09 */
 
-.bold-text{
+.bold-text {
   font-size: 25px;
   font-weight: bolder;
   color: #7541D1;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.white-text{
+
+.white-text {
   color: #00000099;
   font-size: 50px;
 }
-.background-img-09{
-  background:rgba(0,0,0,0);
+
+.background-img-09 {
+  background: rgba(0, 0, 0, 0);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: darken;
   height: 100vh;
 }
-.projectsBg{
-  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
-  url(./assets/img/classroom.png);
+
+.projectsBg {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url(./assets/img/classroom.png);
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 
 }
-.projectsBgLaptop{
-  background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
-  url(./assets/img/laptop.png);
+
+.projectsBgLaptop {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url(./assets/img/laptop.png);
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 
 }
-.user-photo{
+
+.user-photo {
   position: absolute;
-  transform: translate(-50,-50);
+  transform: translate(-50, -50);
   left: 17%;
   top: 20%;
   height: 150px;
   width: 150px;
 }
-.container-left-09{
+
+.container-left-09 {
   background-color: #fff;
   margin-left: 10px;
   border-radius: 6px;
   position: absolute;
-  transform: translate(-50,-50);
+  transform: translate(-50, -50);
   left: 11%;
-  box-shadow: 0 0 50px 10px rgb(0,0,0,0.2);
+  box-shadow: 0 0 50px 10px rgb(0, 0, 0, 0.2);
   top: 50%;
   width: 300px;
   height: 300px;
@@ -68,47 +75,56 @@ background-size: cover;
   justify-content: center;
   align-items: center;
 }
-.list-profile{
+
+.list-profile {
   color: #937dec;
   margin-top: 30px;
   margin-bottom: 30px;
   font-size: 25px;
 }
-.user-name{
+
+.user-name {
   background-color: transparent;
   position: absolute;
-  transform: translate(-50,-50);
+  transform: translate(-50, -50);
   left: 38%;
   top: 20%;
   width: 300px;
   height: 150px;
 }
-.white-text{
+
+.white-text {
   font-size: 20px;
   font-weight: bold;
 }
-.username{
+
+.username {
   font-size: 50px;
   color: #937dec;
   font-weight: bolder;
 }
-.container-user-desc{
+
+.container-user-desc {
   background-color: #fff;
   margin-left: 10px;
   border-radius: 6px;
   position: absolute;
-  transform: translate(-50,-50);
+  transform: translate(-50, -50);
   left: 35%;
   top: 40%;
   width: 900px;
   height: 500px;
   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
 }
-.user-desc-details{
+
+.user-desc-details {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}

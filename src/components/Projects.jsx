@@ -32,12 +32,11 @@ class Projects extends Component {
 
   handleAddProject = async (project) => {
     project.owner = this.state.student._id;
-    if (this.state.projects !== null) {
-      const newProject = [...this.state.projects, project];
-      console.log(newProject);
-      this.setState({ projects: newProject });
-    }
-    addProject(project);
+
+    console.log(project);
+    addProject(project).then((res) => {
+      window.location.reload();
+    });
   };
 
   render() {

@@ -14,22 +14,8 @@ export const getProject = async (_id) => {
   return data;
 };
 
-export const addProject = async (
-  name,
-  description,
-  link,
-  owner,
-  catgories,
-  teammember
-) => {
-  const { data } = await axios.post(DOMAIN + "/api/projects/add", {
-    name,
-    description,
-    link,
-    owner,
-    catgories,
-    teammember,
-  });
+export const addProject = async (project) => {
+  const { data } = await axios.post(DOMAIN + "/api/projects/add", project);
 
   return data;
 };

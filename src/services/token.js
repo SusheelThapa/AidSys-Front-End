@@ -31,6 +31,5 @@ export const getTokenData = async () => {
   const { data } = await axios.post(DOMAIN + "/api/token/data", {
     token,
   });
-  console.log(data);
   return data;
 };
