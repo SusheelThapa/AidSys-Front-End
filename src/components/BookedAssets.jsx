@@ -11,7 +11,7 @@ function BookedAssets({ assets }) {
       <div className="grid grid-cols-3 space-x-8  ">
         {assets.map((asset) => {
           return (
-            <Link to={`/assets/${asset._id}`}>
+            <Link to={`/assets/${asset._id}`} key={asset._id}>
               <CommonBookedAssets key={asset._id} asset={asset} />
             </Link>
           );
