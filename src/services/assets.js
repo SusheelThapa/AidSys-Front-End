@@ -21,3 +21,12 @@ export const addAsset = async (name, description) => {
 
   return data;
 };
+
+export const bookAsset = async (studentID, assetID) => {
+  const { data } = await axios.post(DOMAIN + "/api/assets/book", {
+    studentID,
+    assetID,
+  });
+  console.log(data);
+  return data;
+};
