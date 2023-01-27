@@ -10,7 +10,12 @@ import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
 import { doesTokenExist, getTokenData } from "../services/token";
 import { getStudentDetail } from "../services/students";
-import { bookAsset, getAsset, unBookAsset } from "../services/assets";
+import {
+  bookAsset,
+  getAsset,
+  reviewAsset,
+  unBookAsset,
+} from "../services/assets";
 
 class Asset extends Component {
   state = { student: null, asset: null };
@@ -52,6 +57,14 @@ class Asset extends Component {
         window.location.href = "http://localhost:3000/assets";
       });
     }
+  };
+
+  handlePostReview = (reviewMessage) => {
+    const { student, asset } = this.state;
+
+    reviewAsset(student._id, asset._id, reviewMessage).then(() => {
+      window.location.reload();
+    });
   };
 
   render() {
@@ -110,7 +123,10 @@ class Asset extends Component {
         </div>
 
         <AssetBookingRating bookings={this.state.asset.previousBooking} />
-        <AssetReview reviews={this.state.asset.review} />
+        <AssetReview
+          reviews={this.state.asset.review}
+          onPostReview={this.handlePostReview}
+        />
         <Footer />
       </React.Fragment>
     ) : (

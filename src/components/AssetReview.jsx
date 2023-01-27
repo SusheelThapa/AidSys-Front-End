@@ -1,6 +1,14 @@
 import React from "react";
 import RoundPerson from "../assets/img/round-person.png";
-function AssetReview({ reviews }) {
+import { useRef } from "react";
+function AssetReview({ reviews, onPostReview }) {
+  const reviewMessage = useRef();
+
+  const handlePostAssetReview = () => {
+    const message = reviewMessage.current.value;
+    onPostReview(message);
+  };
+
   return (
     <div className="mt-32 mb-32">
       <h1 className="font-bold text-assets-100 font-serif text-3xl ml-20">
@@ -31,8 +39,12 @@ function AssetReview({ reviews }) {
             className="rounded-lg border w-4/5 p-3 placeholder:italic"
             type="text"
             placeholder="Add a review"
+            ref={reviewMessage}
           />
-          <button className="bg-assets-200 px-4 py-2 w-1/5 rounded-lg ml-10 hover:bg-indigo-400 font-bold text-white">
+          <button
+            onClick={handlePostAssetReview}
+            className="bg-assets-200 px-4 py-2 w-1/5 rounded-lg ml-10 hover:bg-indigo-400 font-bold text-white"
+          >
             POST
           </button>
         </div>
