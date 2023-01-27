@@ -52,7 +52,7 @@ class Assets extends Component {
                 veritatis voluptatum sint voluptate ad?
               </p>
               <button className="bg-assets-200 text-white font-bold text-2xl py-2 px-4 rounded-lg hover:bg-indigo-500 duration-200">
-                BOOK SEATS NOW
+                BOOK ASSETS NOW
               </button>
             </div>
             {/* right container */}
