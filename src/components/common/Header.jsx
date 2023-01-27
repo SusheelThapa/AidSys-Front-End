@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({ studentName }) => {
+const Header = ({ studentName, studentId }) => {
   return (
     <div className="flex bg-gradient-to-l from-purple-500 to-indigo-500 h-20">
       <p className="mx-8 font-bold text-white bg-transparent font-serif text-2xl mt-4">
@@ -23,7 +23,7 @@ const Header = ({ studentName }) => {
       </div>
       <div className="bg-transparent my-4 mx-8">
         <button className="bg-transparent font-medium py-1 px-4 border text-yellow-400 hover:font-bold ">
-          <Link to={"/profile"}>{studentName}</Link>
+          <Link to={`/${studentId}`}>{studentName}</Link>
         </button>
       </div>
     </div>

@@ -70,7 +70,7 @@ const router = createBrowserRouter([
     element: <Notices />,
 },{
 
-    path: "/profile",
+    path: "/:id",
     element: <Profile />,
 },{
     path: "/projects/:id",

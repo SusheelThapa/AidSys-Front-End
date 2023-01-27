@@ -16,10 +16,10 @@ function ProjectsForYou({ projects, onClickAddProject }) {
           Projects For You
         </h1>
       </div>
-      <div className="p-4 grid grid-cols-3 gap-0.5 justify-around justify-items-center items-center">
+      <div className="p-4 grid grid-cols-3 gap-8  justify-around justify-items-center items-center">
         {projects.map((project, index) => {
           if (index < 6)
-            return <AvailableProjects key={project._id} project={project} />;
+            return <AvailableProjects className="m-11" key={project._id} project={project} />;
           return null;
         })}
       </div>
