@@ -29,8 +29,14 @@ class Homepage extends Component {
 
   render() {
     return this.state.student ? (
-      <div id="homepage" className="flex flex-col justify-between h-screen projectsBg">
-        <Header studentName={this.state.student.name} studentId={this.state.student._id} />
+      <div
+        id="homepage"
+        className="flex flex-col justify-between h-screen projectsBg"
+      >
+        <Header
+          studentName={this.state.student.name}
+          studentId={this.state.student._id}
+        />
         <Hero />
 
         {/**
@@ -39,17 +45,11 @@ class Homepage extends Component {
 
         <div className="flex justify-end">
           <div
-            className="flex flex-col items-center justify-end  w-full  bg-gradient-to-br from-purple-500 to-indigo-500 mt-20  h-40 "
+            className="flex flex-col items-center justify-center  w-full  bg-gradient-to-br from-purple-500 to-indigo-500 mt-20  h-40 "
             style={{ "clip-path": "ellipse(60% 100% at 50% 100%)" }}
           >
-            <Link
-              className="mt-4 bg-transparent text-yellow-400 hover:text-yellow-600 font-bold underline"
-              to="#"
-            >
-              <Link to={"/projects"}>Explore More</Link>
-            </Link>
-            <p className="font-bold bg-transparent  text-white mt-2 mb-4 text-2xl">
-              Motto goes here!
+            <p className="font-bold bg-transparent tracking-wider text-white mt-2 mb-4 text-3xl">
+              BE GOOD!<span className="ml-6 text-white">DO GOOD!</span>
             </p>
           </div>
         </div>
