@@ -33,7 +33,15 @@ class Asset extends Component {
     });
   }
 
+  assetBookingClass() {
+    if (this.state.asset.status === "Avaliable") {
+      return null;
+    }
+    return "disabled";
+  }
+
   render() {
+    console.log(this.state.asset);
     return this.state.student ? (
       <React.Fragment>
         <Header studentName={this.state.student.name} />
@@ -60,23 +68,30 @@ class Asset extends Component {
               ullam perspiciatis.
             </p>
             <div className="flex space-x-4 xl:space-x-10 mt-10">
-              <button className="px-4 py-2 font-bold text-xl text-white bg-green-700 hover:bg-green-600 w-60 rounded-lg h-20">
-                AVAILABLE
+              <button
+                className={
+                  "px-4 py-2 font-bold text-xl text-white bg-green-700 hover:bg-green-600 w-60 rounded-lg h-20 " +
+                  this.assetBookingClass()
+                }
+              >
+                {this.state.asset.status === "Avaliable"
+                  ? "AVAILABLE"
+                  : "NOT AVAILABLE"}
               </button>
-              <button className="px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg">
+              <button
+                className={
+                  this.assetBookingClass() +
+                  " px-4 py-2 font-bold text-xl text-white bg-assets-200 w-60 hover:bg-indigo-400 rounded-lg"
+                }
+              >
                 BOOK
-              </button>
-            </div>
-            <div className="mt-8 flex  ">
-              <button className="px-4 py-2 font-bold text-xl text-assets-200 w-60 h-20 rounded-lg border hover:bg-gray-100 ">
-                Add to Wishlist
               </button>
             </div>
           </div>
         </div>
 
-        <AssetBookingRating />
-        <AssetReview />
+        <AssetBookingRating bookings={this.state.asset.previousBooking} />
+        <AssetReview reviews={this.state.asset.review} />
         <Footer />
       </React.Fragment>
     ) : (
