@@ -1,32 +1,34 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+import React, { Component } from "react";
 import Homepage from "./components/Homepage";
+import Loading from "./components/Loading";
 
-import { doesTokenExist, readToken } from "./services/token";
-import { getTokenData } from "./services/request";
+import { doesTokenExist, getTokenData } from "./services/token";
+import { getStudentDetail } from "./services/students";
 
-function App() {
-  const navigate = useNavigate();
+class App extends Component {
+  state = { student: null };
 
-  useEffect(() => {
+  componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        if (res.data.error) {
+      getTokenData().then((student) => {
+        if (student) {
+          getStudentDetail(student._id).then((detail) => {
+            this.setState({ student: detail });
+          });
+        } else {
           localStorage.clear();
-          navigate("/login");
+
+          window.location.href = "http://localhost:3000/login";
         }
       });
     } else {
-      navigate("/login");
+      window.location.href = "http://localhost:3000/login";
     }
-  });
-
-  return (
-    <React.Fragment>
-      <Homepage />
-    </React.Fragment>
-  );
+  }
+  render() {
+    const { student } = this.state;
+    return student ? <Homepage /> : <Loading />;
+  }
 }
 
 export default App;

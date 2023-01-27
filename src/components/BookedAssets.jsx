@@ -1,4 +1,5 @@
 import React from "react";
+
 import Addmore from "../assets/img/addMore.svg";
 
 import CommonBookedAssets from "./CommonBookedAssets";
@@ -8,7 +9,7 @@ function BookedAssets({ assets }) {
     <div>
       <div className="grid grid-cols-3 space-x-8  ">
         {assets.map((asset) => {
-          return <CommonBookedAssets key={asset.asset._id} asset={asset.asset} />;
+          return <CommonBookedAssets key={asset._id} asset={asset} />;
         })}
 
         <div className="group mx-0 h-56">
