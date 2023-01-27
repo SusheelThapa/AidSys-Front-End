@@ -1,24 +1,22 @@
 import React, { Component } from "react";
+
 import Header from "./common/Header";
+import Loading from "./Loading";
+
 import ProjectsForYou from "./projects/ProjectsForYou";
 
-import { getStudentDetail, getTokenData } from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
-import Loading from "./Loading";
+import { doesTokenExist, getTokenData } from "../services/token";
+import { getStudentDetail } from "../services/students";
+import { addProject, getAllProjects } from "../services/projects";
+
 class Projects extends Component {
-  state = { student: null };
+  state = { student: null, projects: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            console.log(student);
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -26,13 +24,30 @@ class Projects extends Component {
        * TODO: Redirect to login page
        */
     }
+
+    getAllProjects().then((projects) => {
+      this.setState({ projects });
+    });
   }
+
+  handleAddProject = async (project) => {
+    project.owner = this.state.student._id;
+    if (this.state.projects !== null) {
+      const newProject = [...this.state.projects, project];
+      console.log(newProject);
+      this.setState({ projects: newProject });
+    }
+    addProject(project);
+  };
 
   render() {
     return this.state.student ? (
       <React.Fragment>
-        <div className="bg-gray-500 h-screen projectsBg">
-          <Header studentName={this.state.student.username.toUpperCase()} />
+        <div className="bg-gray-500 h-screen projectsBgLaptop">
+          <Header
+            studentName={this.state.student.name}
+            studentId={this.state.student._id}
+          />
           <div className="w-1/2 max-w-xl mt-36 ml-36 bg-white rounded-lg shadow-lg ">
             <div className="flex flex-col space-y-4 px-4 py-14">
               <p>
@@ -61,7 +76,10 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        <ProjectsForYou />
+        <ProjectsForYou
+          onClickAddProject={this.handleAddProject}
+          projects={this.state.projects}
+        />
       </React.Fragment>
     ) : (
       <Loading />

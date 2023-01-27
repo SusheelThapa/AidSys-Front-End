@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
-import { createToken, sendSignupDetails } from "../services/request";
-import { doesTokenExist, saveToken } from "../services/token";
-
 import phoneImage from "../assets/img/login-phone.svg";
 
 import "../assets/css/auth.css";
+
+import { createToken, doesTokenExist, saveToken } from "../services/token.js";
+import { sendSignupDetails } from "../services/auth.js";
 
 const Signup = () => {
   const navigate = useNavigate();

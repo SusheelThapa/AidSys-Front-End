@@ -4,23 +4,20 @@ import { Link } from "react-router-dom";
 import Header from "./common/Header";
 import Hero from "./Hero";
 
-import { getStudentDetail, getTokenData } from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
 import Loading from "./Loading";
+
+import { doesTokenExist, getTokenData } from "../services/token";
+import { getStudentDetail } from "../services/students";
 
 class Homepage extends Component {
   state = { student: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        console.log(res);
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -32,8 +29,8 @@ class Homepage extends Component {
 
   render() {
     return this.state.student ? (
-      <div id="homepage" className="flex flex-col justify-between h-screen">
-        <Header studentName={this.state.student.username.toUpperCase()} />
+      <div id="homepage" className="flex flex-col justify-between h-screen projectsBg">
+        <Header studentName={this.state.student.name} studentId={this.state.student._id} />
         <Hero />
 
         {/**
@@ -49,7 +46,7 @@ class Homepage extends Component {
               className="mt-4 bg-transparent text-yellow-400 hover:text-yellow-600 font-bold underline"
               to="#"
             >
-              Explore More
+              <Link to={"/projects"}>Explore More</Link>
             </Link>
             <p className="font-bold bg-transparent  text-white mt-2 mb-4 text-2xl">
               Motto goes here!

@@ -2,28 +2,23 @@ import React, { Component } from "react";
 import Header from "./common/Header";
 
 import Classroom from "../assets/img/classroom.png";
-import { getStudentDetail, getTokenData } from "../services/request";
-import { doesTokenExist, readToken } from "../services/token";
+
 import Loading from "./Loading";
 
 import AssetBookingRating from "./AssetBookingRating";
 import Footer from "./common/Footer";
 import AssetReview from "./AssetReview";
+import { doesTokenExist, getTokenData } from "../services/token";
+import { getStudentDetail } from "../services/students";
 
 class Asset extends Component {
   state = { student: null };
 
   componentDidMount() {
     if (doesTokenExist()) {
-      getTokenData(readToken()).then((res) => {
-        getStudentDetail(res.data.studentID).then((studentdata) => {
-          if (studentdata.success) {
-            const student = studentdata.student[0];
-            console.log(student);
-            this.setState({ student: student });
-          } else {
-            alert(studentdata.message);
-          }
+      getTokenData().then((res) => {
+        getStudentDetail(res._id).then((student) => {
+          this.setState({ student });
         });
       });
     } else {
@@ -36,7 +31,7 @@ class Asset extends Component {
   render() {
     return this.state.student ? (
       <React.Fragment>
-        <Header studentName={this.state.student.username.toUpperCase()} />
+        <Header studentName={this.state.student.name} />
         <div className="flex justify-between h-[90vh]">
           <div className="w-1/2 ">
             <img

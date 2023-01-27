@@ -22,12 +22,18 @@ import Login from "./components/Login";
 import Assets from "./components/Assets";
 import Asset from "./components/Asset";
 import Projects from "./components/Projects";
+import Project from "./components/Project";
 
 /**
  * Globally importing font awesome
  */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+
+import Notices from "./components/Notices";
+
+import Profile from "./components/Profile";
+
 
 library.add(fas);
 
@@ -58,6 +64,18 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    path: "/notices",
+    element: <Notices />,
+},{
+
+    path: "/:id",
+    element: <Profile />,
+},{
+    path: "/projects/:id",
+    element: <Project />,
+
   },
 ]);
 

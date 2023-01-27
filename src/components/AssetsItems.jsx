@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+
 import CommonItems from "./CommonItems";
-import { getAllAssets } from "../services/request";
 import Loading from "./Loading";
+
+import { getAllAssets } from "../services/assets.js";
 
 class AssetsItems extends Component {
   state = { allAssets: null };
 
   componentDidMount() {
-    getAllAssets().then((res) => {
-      this.setState({ allAssets: res.assets });
+    getAllAssets().then((assets) => {
+      this.setState({ allAssets: assets });
     });
   }
   render() {

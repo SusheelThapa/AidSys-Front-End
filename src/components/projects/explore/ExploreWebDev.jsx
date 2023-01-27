@@ -1,23 +1,24 @@
 import React from "react";
-import AvailableProjects from "../AvailableProjects";
 import NotAvailableProjects from "../NotAvailableProjects";
 
-function ExploreWebDev() {
+function ExploreWebDev({ projects, start, end }) {
   return (
-    <>
+    <React.Fragment>
       <div>
         <h1 className="mt-12 font-bold font-serif text-2xl ml-16 text-assets-100 mb-8">
           WEB DEVELOPMENT
         </h1>
         <div className="p-4 flex space-x-4 xl:space-x-12 overflow-x-scroll">
-          <AvailableProjects />
-          <AvailableProjects />
-          <NotAvailableProjects />
-          <NotAvailableProjects />
-          <AvailableProjects />
+          {projects.map((project, index) => {
+            if (index > start && index < end)
+              return (
+                <NotAvailableProjects key={project._id} project={project} />
+              );
+            return null;
+          })}
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 export default ExploreWebDev;

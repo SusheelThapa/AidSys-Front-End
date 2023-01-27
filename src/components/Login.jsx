@@ -3,8 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 import FormContainer from "./common/FormContainer.jsx";
 
-import { sendLoginDetails, createToken } from "../services/request.js";
-import { doesTokenExist, saveToken } from "../services/token.js";
+// import { sendLoginDetails, createToken } from "../services/request.js";
+
+import { sendLoginDetails } from "../services/auth.js";
+import { doesTokenExist, saveToken, createToken } from "../services/token.js";
 
 import phoneImage from "../assets/img/login-phone.svg";
 
@@ -14,9 +16,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    /**
-     * Redirect to homepage if token exist
-     */
     if (doesTokenExist()) {
       navigate("/");
     }
@@ -27,26 +26,16 @@ const Login = () => {
 
     const { username, password } = data;
 
-    const response = await sendLoginDetails(username, password);
+    const { _id } = await sendLoginDetails(username, password);
 
-    const { success, error } = response;
-
-    if (success) {
-      const { studentID } = response;
-
-      const token = await createToken(studentID);
+    if (_id) {
+      const token = await createToken(_id);
 
       saveToken(token);
 
       setTimeout(() => {
         navigate("/");
-      }, 500);
-    } else if (error) {
-      console.error(error);
-
-      /**
-       * In the web page show, the error message
-       */
+      }, 100);
     }
   };
 

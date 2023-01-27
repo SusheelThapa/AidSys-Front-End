@@ -1,24 +1,22 @@
-import React from "react";
-import { useRef } from "react";
-import { addAsset } from "../services/request";
+import React, { useRef } from "react";
+
+import { addAsset } from "../services/assets.js";
 
 function AssetsAdd() {
   const name = useRef();
   const description = useRef();
 
   const handleAddAsset = async () => {
-    /**
-     * Need to create a route to add assets
-     */
     const assetName = name.current.value;
 
     const assetDescription = description.current.value;
 
-    await addAsset(assetName);
+    await addAsset(assetName, assetDescription);
 
     name.current.value = "";
     description.current.value = "";
   };
+
   return (
     <div className="my-32">
       <p className="text-3xl font-bold text-assets-100 mx-8 font-serif">
