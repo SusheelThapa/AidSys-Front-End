@@ -44,7 +44,10 @@ class Projects extends Component {
     return this.state.student ? (
       <React.Fragment>
         <div className="bg-gray-500 h-screen projectsBg">
-          <Header studentName={this.state.student.name} />
+          <Header
+            studentName={this.state.student.name}
+            studentId={this.state.student._id}
+          />
           <div className="w-1/2 max-w-xl mt-36 ml-36 bg-white rounded-lg shadow-lg ">
             <div className="flex flex-col space-y-4 px-4 py-14">
               <p>

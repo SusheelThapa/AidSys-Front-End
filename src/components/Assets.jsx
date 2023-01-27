@@ -33,7 +33,10 @@ class Assets extends Component {
   render() {
     return this.state.student ? (
       <div>
-        <Header studentName={this.state.student.name} />
+        <Header
+          studentName={this.state.student.name}
+          studentId={this.state.student._id}
+        />
         <div className="h-screen bg-gray-200">
           {/* page one */}
           <div className="flex space-x-6 xl:space-x-32">

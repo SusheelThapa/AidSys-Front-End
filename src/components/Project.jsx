@@ -74,7 +74,10 @@ class Project extends Component {
   render() {
     return this.state.student ? (
       <React.Fragment>
-        <Header studentName={this.state.student.name} />
+        <Header
+          studentName={this.state.student.name}
+          studentId={this.state.student._id}
+        />
         <div className="mx-10 my-12">
           <h1 className="text-3xl text-assets-100 font-bold  font-serif">
             {this.state.project.name}
