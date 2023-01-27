@@ -53,7 +53,9 @@ class AssetsItems extends Component {
               </div>
               <div className="mx-12 mb-8">
                 {this.state.allAssets.map((asset) => {
-                  return <CommonItems key={asset._id} asset={asset} />;
+                  if (asset.status === "Avaliable")
+                    return <CommonItems key={asset._id} asset={asset} />;
+                  return null;
                 })}
               </div>
             </div>
