@@ -8,6 +8,14 @@ import ExploreDS from "./explore/ExploreDS";
 import PostProject from "./PostProject";
 import Footer from "../common/Footer";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 function ProjectsForYou({ projects, onClickAddProject }) {
   return (
     <React.Fragment>
@@ -16,12 +24,35 @@ function ProjectsForYou({ projects, onClickAddProject }) {
           Projects For You
         </h1>
       </div>
-      <div className="p-4 grid grid-cols-3 gap-8  justify-around justify-items-center items-center">
-        {projects.map((project, index) => {
-          if (index < 6)
-            return <AvailableProjects className="m-11" key={project._id} project={project} />;
-          return null;
-        })}
+      <div className="p-4">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={20}
+          slidesPerGroup={1}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={true}
+          modules={[Navigation, Autoplay]}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+        >
+          {projects.map((project, index) => {
+            if (index < 6)
+              return (
+                <SwiperSlide>
+                  <AvailableProjects
+                    className="m-11"
+                    key={project._id}
+                    project={project}
+                  />
+                </SwiperSlide>
+              );
+            return null;
+          })}
+        </Swiper>
       </div>
 
       <h2 className="mt-20 text-3xl font-bold text-assets-100 ml-16 font-serif">
