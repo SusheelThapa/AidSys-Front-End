@@ -16,7 +16,7 @@ class AssetsItems extends Component {
   render() {
     return this.state.allAssets ? (
       // global container
-      <div className="bg-white h-full pb-28">
+      <div className="bg-white h-full pb-28" id="explore-assets">
         <div className="flex items-center space-x-12 ">
           {/* left container */}
           <div className="w-1/3 mt-24 ml-8 xl:ml-14">

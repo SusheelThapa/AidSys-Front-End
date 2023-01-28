@@ -68,9 +68,11 @@ class Projects extends Component {
                 with your fellow peers to build something new
               </p>
               <div className="flex justify-center">
-                <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white font-bold">
-                  EXPLORE
-                </button>
+                <a href="#explore-projects">
+                  <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white font-bold">
+                    EXPLORE
+                  </button>
+                </a>
               </div>
             </div>
           </div>
