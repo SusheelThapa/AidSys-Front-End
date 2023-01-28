@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-function ExploreDS({ projects, start, end }) {
+function ExploreDS({ ds }) {
   return (
     <React.Fragment>
       <div>
@@ -31,17 +31,14 @@ function ExploreDS({ projects, start, end }) {
               disableOnInteraction: false,
             }}
           >
-            {projects.map((project, index) => {
-              if (index > start && index < end)
-                return (
-                  <SwiperSlide>
-                    <NotAvailableProjects key={project._id} project={project} />
-                  </SwiperSlide>
-                );
-              return null;
+            {ds.map((project, index) => {
+              return (
+                <SwiperSlide>
+                  <NotAvailableProjects key={project._id} project={project} />
+                </SwiperSlide>
+              );
             })}
           </Swiper>
-
         </div>
       </div>
     </React.Fragment>

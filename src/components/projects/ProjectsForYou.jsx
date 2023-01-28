@@ -16,7 +16,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-function ProjectsForYou({ projects, onClickAddProject }) {
+function ProjectsForYou({
+  projects,
+  onClickAddProject,
+  webdev,
+  appdev,
+  ds,
+  ai,
+}) {
   return (
     <React.Fragment>
       <div>
@@ -59,10 +66,10 @@ function ProjectsForYou({ projects, onClickAddProject }) {
         EXPLORE BY CATEGORIES
       </h2>
       <div id="explore-projects">
-        <ExploreWebDev projects={projects} start={6} end={13} />
-        <ExploreAppDev projects={projects} start={21} end={28} />
-        <ExploreAR projects={projects} start={36} end={43} />
-        <ExploreDS projects={projects} start={50} end={57} />
+        <ExploreWebDev webdev={webdev} />
+        <ExploreAppDev appdev={appdev} />
+        <ExploreAR ai={ai} />
+        <ExploreDS ds={ds} />
         <PostProject onClickAddProject={onClickAddProject} />
         <Footer />
       </div>

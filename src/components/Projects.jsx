@@ -40,6 +40,27 @@ class Projects extends Component {
   };
 
   render() {
+    let webdev = [];
+    let appdev = [];
+    let ai = [];
+    let ds = [];
+
+    const { projects } = this.state;
+    if (projects) {
+      webdev = projects.filter((project) => {
+        return project.categories.indexOf("WebDev") !== -1;
+      });
+      appdev = projects.filter((project) => {
+        return project.categories.indexOf("AppDev") !== -1;
+      });
+      ai = projects.filter((project) => {
+        return project.categories.indexOf("AI") !== -1;
+      });
+      ds = projects.filter((project) => {
+        return project.categories.indexOf("DS") !== -1;
+      });
+    }
+
     return this.state.student ? (
       <React.Fragment>
         <div className="bg-gray-500 h-screen projectsBgLaptop">
@@ -77,10 +98,16 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        <ProjectsForYou
-          onClickAddProject={this.handleAddProject}
-          projects={this.state.projects}
-        />
+        {projects && (
+          <ProjectsForYou
+            onClickAddProject={this.handleAddProject}
+            projects={this.state.projects}
+            webdev={webdev}
+            ds={ds}
+            ai={ai}
+            appdev={appdev}
+          />
+        )}
       </React.Fragment>
     ) : (
       <Loading />

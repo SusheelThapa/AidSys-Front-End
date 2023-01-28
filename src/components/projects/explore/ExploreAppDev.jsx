@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-function ExploreAppDev({ projects, start, end }) {
+function ExploreAppDev({ appdev }) {
   return (
     <React.Fragment>
       <div>
@@ -26,23 +26,20 @@ function ExploreAppDev({ projects, start, end }) {
             loop={true}
             loopFillGroupWithBlank={true}
             navigation={true}
-            modules={[Navigation,Autoplay]}
+            modules={[Navigation, Autoplay]}
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
             }}
           >
-            {projects.map((project, index) => {
-              if (index > start && index < end)
-                return (
-                  <SwiperSlide>
-                    <NotAvailableProjects key={project._id} project={project} />
-                  </SwiperSlide>
-                );
-              return null;
+            {appdev.map((project) => {
+              return (
+                <SwiperSlide>
+                  <NotAvailableProjects key={project._id} project={project} />
+                </SwiperSlide>
+              );
             })}
           </Swiper>
-
         </div>
       </div>
     </React.Fragment>

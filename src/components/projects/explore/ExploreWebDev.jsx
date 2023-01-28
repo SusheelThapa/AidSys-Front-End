@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-function ExploreWebDev({ projects, start, end }) {
+function ExploreWebDev({ webdev }) {
   return (
     <React.Fragment>
       <div>
@@ -29,20 +29,17 @@ function ExploreWebDev({ projects, start, end }) {
             autoplay={{
               delay: 1000,
               disableOnInteraction: false,
-              reverseDirection:true
+              reverseDirection: true,
             }}
           >
-            {projects.map((project, index) => {
-              if (index > start && index < end)
-                return (
-                  <SwiperSlide>
-                    <NotAvailableProjects key={project._id} project={project} />
-                  </SwiperSlide>
-                );
-              return null;
+            {webdev.map((project) => {
+              return (
+                <SwiperSlide>
+                  <NotAvailableProjects key={project._id} project={project} />
+                </SwiperSlide>
+              );
             })}
           </Swiper>
-
         </div>
       </div>
     </React.Fragment>
