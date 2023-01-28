@@ -3,7 +3,7 @@ import NotAvailableProjects from "../NotAvailableProjects";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -25,7 +25,11 @@ function ExploreAppDev({ projects, start, end }) {
             loop={true}
             loopFillGroupWithBlank={true}
             navigation={true}
-            modules={[Navigation]}
+            modules={[Navigation,Autoplay]}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+            }}
           >
             {projects.map((project, index) => {
               if (index > start && index < end)
