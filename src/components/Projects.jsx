@@ -44,6 +44,7 @@ class Projects extends Component {
     let appdev = [];
     let ai = [];
     let ds = [];
+    let other = [];
 
     const { projects } = this.state;
     if (projects) {
@@ -58,6 +59,9 @@ class Projects extends Component {
       });
       ds = projects.filter((project) => {
         return project.categories.indexOf("DS") !== -1;
+      });
+      other = projects.filter((project) => {
+        return project.categories.indexOf("Other") !== -1;
       });
     }
 
@@ -106,6 +110,7 @@ class Projects extends Component {
             ds={ds}
             ai={ai}
             appdev={appdev}
+            other={other}
           />
         )}
       </React.Fragment>

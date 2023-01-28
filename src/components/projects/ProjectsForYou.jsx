@@ -15,6 +15,7 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import ExploreOther from "./explore/ExploreOther";
 
 function ProjectsForYou({
   projects,
@@ -23,6 +24,7 @@ function ProjectsForYou({
   appdev,
   ds,
   ai,
+  other,
 }) {
   return (
     <React.Fragment>
@@ -70,6 +72,7 @@ function ProjectsForYou({
         <ExploreAppDev appdev={appdev} />
         <ExploreAR ai={ai} />
         <ExploreDS ds={ds} />
+        <ExploreOther other={other} />
         <PostProject onClickAddProject={onClickAddProject} />
         <Footer />
       </div>
