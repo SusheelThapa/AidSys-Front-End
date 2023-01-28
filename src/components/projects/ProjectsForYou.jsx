@@ -28,10 +28,10 @@ function ProjectsForYou({ projects, onClickAddProject }) {
         EXPLORE BY CATEGORIES
       </h2>
       <div id="explore-projects">
-        <ExploreWebDev projects={projects} start={6} end={21} />
-        <ExploreAppDev projects={projects} start={21} end={36} />
-        <ExploreAR projects={projects} start={36} end={50} />
-        <ExploreDS projects={projects} start={50} end={66} />
+        <ExploreWebDev projects={projects} start={6} end={13} />
+        <ExploreAppDev projects={projects} start={21} end={28} />
+        <ExploreAR projects={projects} start={36} end={43} />
+        <ExploreDS projects={projects} start={50} end={57} />
         <PostProject onClickAddProject={onClickAddProject} />
         <Footer />
       </div>

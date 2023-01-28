@@ -8,7 +8,7 @@ function ExploreDS({ projects, start, end }) {
         <h1 className="mt-20 font-bold font-serif text-2xl ml-16 text-assets-100 mb-8">
           DATA SCIENCE PROJECTS
         </h1>
-        <div className="p-4 flex space-x-4 xl:space-x-12 overflow-x-scroll">
+        <div className="p-4 flex space-x-4 xl:space-x-12 overflow-x-clip hover:overflow-x-scroll">
           {projects.map((project, index) => {
             if (index > start && index < end)
               return (
