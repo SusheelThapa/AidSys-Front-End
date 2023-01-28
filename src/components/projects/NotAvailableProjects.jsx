@@ -36,7 +36,7 @@ function NotAvailableProjects({ project }) {
               Apply for collab
             </p>
             <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
-              Learn More
+              View Project
             </button>
           </div>
         </div>

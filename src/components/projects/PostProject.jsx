@@ -162,9 +162,9 @@ function PostProject({ onClickAddProject }) {
                     placeholder="Details about the project"
                     ref={description}
                   ></textarea>
-                  <button className="absolute top-2 right-10 border shadow-xl text-xs py-1 px-3 border-black rounded-lg hover:bg-gray-200">
+                  {/* <button className="absolute top-2 right-10 border shadow-xl text-xs py-1 px-3 border-black rounded-lg hover:bg-gray-200">
                     Add image
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
