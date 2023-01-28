@@ -18,8 +18,8 @@ import "swiper/css/navigation";
 import ExploreOther from "./explore/ExploreOther";
 
 function ProjectsForYou({
-  projects,
   onClickAddProject,
+  yourProject,
   webdev,
   appdev,
   ds,
@@ -30,7 +30,7 @@ function ProjectsForYou({
     <React.Fragment>
       <div>
         <h1 className="mt-12 font-bold font-serif text-3xl ml-16 text-assets-100 mb-8">
-          Projects For You
+          Your Projects
         </h1>
       </div>
       <div className="p-4">
@@ -43,23 +43,21 @@ function ProjectsForYou({
           navigation={true}
           modules={[Navigation, Autoplay]}
           autoplay={{
-            delay: 1000,
+            delay: 2000,
             disableOnInteraction: false,
             reverseDirection: true,
           }}
         >
-          {projects.map((project, index) => {
-            if (index < 6)
-              return (
-                <SwiperSlide>
-                  <AvailableProjects
-                    className="m-11"
-                    key={project._id}
-                    project={project}
-                  />
-                </SwiperSlide>
-              );
-            return null;
+          {yourProject.map((project) => {
+            return (
+              <SwiperSlide>
+                <AvailableProjects
+                  className="m-11"
+                  key={project._id}
+                  project={project}
+                />
+              </SwiperSlide>
+            );
           })}
         </Swiper>
       </div>
