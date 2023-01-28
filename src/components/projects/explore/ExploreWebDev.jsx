@@ -34,8 +34,8 @@ function ExploreWebDev({ webdev }) {
           >
             {webdev.map((project) => {
               return (
-                <SwiperSlide>
-                  <NotAvailableProjects key={project._id} project={project} />
+                <SwiperSlide key={project._id}>
+                  <NotAvailableProjects  project={project} />
                 </SwiperSlide>
               );
             })}

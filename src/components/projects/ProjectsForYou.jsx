@@ -50,10 +50,9 @@ function ProjectsForYou({
         >
           {yourProject.map((project) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={project._id}>
                 <AvailableProjects
                   className="m-11"
-                  key={project._id}
                   project={project}
                 />
               </SwiperSlide>
