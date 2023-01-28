@@ -4,7 +4,6 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import Loading from "./Loading";
 
-import AssetsRecommendation from "./AssetsRecommendation";
 import BookedAssets from "./BookedAssets";
 import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
@@ -83,7 +82,6 @@ class Assets extends Component {
         </div>
         <AssetsItems />
         <AssetsMap />
-        <AssetsRecommendation />
         <AssetsAdd />
         <Footer />
       </div>
