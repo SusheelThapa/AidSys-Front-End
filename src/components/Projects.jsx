@@ -68,6 +68,7 @@ class Projects extends Component {
 
     if (student) {
       yourProject = student.projects;
+      console.log(yourProject);
     }
     return this.state.student ? (
       <React.Fragment>
