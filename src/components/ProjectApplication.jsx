@@ -53,7 +53,7 @@ function ProjectApplication() {
           <ul className="py-2 px-12 font-bold font-serif space-y-1 list-disc">
               <li>Your Name</li>
               <li>Your Role</li>
-              <li>Your Role</li>
+              <li>Link to your GitHub profile</li>
               <li>Skilsset that you could bring</li>
             </ul>
           
