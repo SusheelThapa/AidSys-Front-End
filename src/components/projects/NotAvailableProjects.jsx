@@ -5,7 +5,7 @@ import laptop from "../../assets/img/laptop3.png";
 
 function NotAvailableProjects({ project }) {
   return (
-    <div>
+    <div className="m-2">
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
         <div className="relative">
           <img className="rounded-t-xl" src={laptop} alt="classroom" />
