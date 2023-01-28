@@ -40,6 +40,36 @@ class Projects extends Component {
   };
 
   render() {
+    let yourProject = [];
+    let webdev = [];
+    let appdev = [];
+    let ai = [];
+    let ds = [];
+    let other = [];
+
+    const { projects, student } = this.state;
+    if (projects) {
+      webdev = projects.filter((project) => {
+        return project.categories.indexOf("WebDev") !== -1;
+      });
+      appdev = projects.filter((project) => {
+        return project.categories.indexOf("AppDev") !== -1;
+      });
+      ai = projects.filter((project) => {
+        return project.categories.indexOf("AI") !== -1;
+      });
+      ds = projects.filter((project) => {
+        return project.categories.indexOf("DS") !== -1;
+      });
+      other = projects.filter((project) => {
+        return project.categories.indexOf("Other") !== -1;
+      });
+    }
+
+    if (student) {
+      yourProject = student.projects;
+      console.log(yourProject);
+    }
     return this.state.student ? (
       <React.Fragment>
         <div className="bg-gray-500 h-screen projectsBgLaptop">
@@ -68,17 +98,26 @@ class Projects extends Component {
                 with your fellow peers to build something new
               </p>
               <div className="flex justify-center">
-                <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white font-bold">
-                  EXPLORE
-                </button>
+                <a href="#explore-projects">
+                  <button className="mt-14 mb-4 bg-assets-200 px-8 py-3 rounded-lg hover:bg-indigo-400 text-white font-bold">
+                    EXPLORE
+                  </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <ProjectsForYou
-          onClickAddProject={this.handleAddProject}
-          projects={this.state.projects}
-        />
+        {projects && (
+          <ProjectsForYou
+            onClickAddProject={this.handleAddProject}
+            yourProject={yourProject}
+            webdev={webdev}
+            ds={ds}
+            ai={ai}
+            appdev={appdev}
+            other={other}
+          />
+        )}
       </React.Fragment>
     ) : (
       <Loading />

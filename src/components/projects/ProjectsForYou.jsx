@@ -8,31 +8,71 @@ import ExploreDS from "./explore/ExploreDS";
 import PostProject from "./PostProject";
 import Footer from "../common/Footer";
 
-function ProjectsForYou({ projects, onClickAddProject }) {
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import ExploreOther from "./explore/ExploreOther";
+
+function ProjectsForYou({
+  onClickAddProject,
+  yourProject,
+  webdev,
+  appdev,
+  ds,
+  ai,
+  other,
+}) {
   return (
     <React.Fragment>
       <div>
         <h1 className="mt-12 font-bold font-serif text-3xl ml-16 text-assets-100 mb-8">
-          Projects For You
+          Your Projects
         </h1>
       </div>
-      <div className="p-4 grid grid-cols-3 gap-8  justify-around justify-items-center items-center">
-        {projects.map((project, index) => {
-          if (index < 6)
-            return <AvailableProjects className="m-11" key={project._id} project={project} />;
-          return null;
-        })}
+      <div className="p-4">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={20}
+          slidesPerGroup={1}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={true}
+          modules={[Navigation, Autoplay]}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }}
+        >
+          {yourProject.map((project) => {
+            return (
+              <SwiperSlide key={project._id}>
+                <AvailableProjects
+                  className="m-11"
+                  project={project}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
 
       <h2 className="mt-20 text-3xl font-bold text-assets-100 ml-16 font-serif">
         EXPLORE BY CATEGORIES
       </h2>
-      <ExploreWebDev projects={projects} start={6} end={21} />
-      <ExploreAppDev projects={projects} start={21} end={36} />
-      <ExploreAR projects={projects} start={36} end={50} />
-      <ExploreDS projects={projects} start={50} end={66} />
-      <PostProject onClickAddProject={onClickAddProject} />
-      <Footer />
+      <div id="explore-projects">
+        <ExploreWebDev webdev={webdev} />
+        <ExploreAppDev appdev={appdev} />
+        <ExploreAR ai={ai} />
+        <ExploreDS ds={ds} />
+        <ExploreOther other={other} />
+        <PostProject onClickAddProject={onClickAddProject} />
+        <Footer />
+      </div>
     </React.Fragment>
   );
 }

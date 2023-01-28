@@ -12,6 +12,7 @@ function PostProject({ onClickAddProject }) {
   const memberFourLink = useRef();
   const description = useRef();
   const projectLink = useRef();
+  const categories = useRef();
 
   const handleAddProject = () => {
     const project = {
@@ -19,7 +20,7 @@ function PostProject({ onClickAddProject }) {
       description: description.current.value,
       link: projectLink.current.value,
       owner: "",
-      catgories: ["Other"],
+      categories: [categories.current.value],
       teammember: [],
     };
 
@@ -47,7 +48,6 @@ function PostProject({ onClickAddProject }) {
         link: memberFourLink.current.value,
       });
     }
-
     onClickAddProject(project);
   };
 
@@ -79,6 +79,16 @@ function PostProject({ onClickAddProject }) {
                     id=""
                     placeholder="Project Link"
                     ref={projectLink}
+                  />
+                </div>
+                <div className="px-6 flex space-x-4 mt-4 ">
+                  <input
+                    className="focus:outline-none border rounded-lg w-full p-2 placeholder:italic "
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Category(AI,WebDev,AppDev,DS,Other)"
+                    ref={categories}
                   />
                 </div>
                 <div className="px-6 flex space-x-4 mt-4">
@@ -162,9 +172,9 @@ function PostProject({ onClickAddProject }) {
                     placeholder="Details about the project"
                     ref={description}
                   ></textarea>
-                  <button className="absolute top-2 right-10 border shadow-xl text-xs py-1 px-3 border-black rounded-lg hover:bg-gray-200">
+                  {/* <button className="absolute top-2 right-10 border shadow-xl text-xs py-1 px-3 border-black rounded-lg hover:bg-gray-200">
                     Add image
-                  </button>
+                  </button> */}
                 </div>
               </div>
 

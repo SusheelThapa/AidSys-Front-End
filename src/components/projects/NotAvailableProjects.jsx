@@ -5,7 +5,7 @@ import laptop from "../../assets/img/laptop3.png";
 
 function NotAvailableProjects({ project }) {
   return (
-    <div>
+    <div className="m-2">
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
         <div className="relative">
           <img className="rounded-t-xl" src={laptop} alt="classroom" />
@@ -36,7 +36,7 @@ function NotAvailableProjects({ project }) {
               Apply for collab
             </p>
             <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
-              Learn More
+              View Project
             </button>
           </div>
         </div>

@@ -8,7 +8,7 @@ function ProjectApplication() {
       </h1>
       <div className="flex justify-center items-center mt-10">
         <div className="rounded-lg w-[700px] xl:w-[800px] border shadow-2xl">
-          <div className="flex flex-col mt-10">
+          {/* <div className="flex flex-col mt-10">
             <div className="px-6 flex space-x-4 ">
               <input
                 className="focus:outline-none border rounded-lg w-3/5 p-2 placeholder:italic "
@@ -45,13 +45,22 @@ function ProjectApplication() {
               ></textarea>
               
             </div>
-          </div>
+          </div> */}
+          <p className="text-2xl text-assets-100 font-bold font-serif mx-4 mt-4">
+            Please include the following points in the mail: 
+            
+          </p>
+          <ul className="py-2 px-12 font-bold font-serif space-y-1 list-disc">
+              <li>Your Name</li>
+              <li>Your Role</li>
+              <li>Link to your GitHub profile</li>
+              <li>Skilsset that you could bring</li>
+            </ul>
           
-          
-          <div className="flex justify-center mb-8">
-            <button className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl">
+          <div className="flex justify-center mb-8 mt-4">
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfrtXBCgbfzVgBJSfKNLcTXDKzNBhPwGqbcPPBnnpCRRgNsmPLjTzBjwmGrtlCSDKDbJxV" className="bg-assets-200 hover:bg-indigo-400 px-10 py-3 rounded-lg text-white font-bold text-xl">
               APPLY TO COLLAB
-            </button>
+            </a>
           </div>
         </div>
       </div>

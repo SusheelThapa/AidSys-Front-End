@@ -10,7 +10,7 @@ function AvailableProjects({ project }) {
     window.location.href = link;
   };
   return (
-    <div>
+    <div className="m-3">
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
         <div className="relative">
           <img className="rounded-t-xl" src={laptop} alt="classroom" />
@@ -47,7 +47,7 @@ function AvailableProjects({ project }) {
               }}
               className="font-bold text-sm text-assets-100 underline hover:text-indigo-400"
             >
-              Learn More
+              View Project
             </button>
           </div>
         </div>

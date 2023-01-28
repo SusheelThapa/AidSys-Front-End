@@ -4,7 +4,6 @@ import Header from "./common/Header";
 import Footer from "./common/Footer";
 import Loading from "./Loading";
 
-import AssetsRecommendation from "./AssetsRecommendation";
 import BookedAssets from "./BookedAssets";
 import AssetsItems from "./AssetsItems";
 import AssetsMap from "./AssetsMap";
@@ -51,9 +50,11 @@ class Assets extends Component {
                 aliquam aperiam nostrum minus quo beatae eius sapiente ipsum sed
                 veritatis voluptatum sint voluptate ad?
               </p>
-              <button className="bg-assets-200 text-white font-bold text-2xl py-2 px-4 rounded-lg hover:bg-indigo-500 duration-200">
-                BOOK ASSETS NOW
-              </button>
+              <a href={"#explore-assets"}>
+                <button className="bg-assets-200 text-white font-bold text-2xl py-2 px-4 rounded-lg hover:bg-indigo-500 duration-200">
+                  BOOK ASSETS NOW
+                </button>
+              </a>
             </div>
             {/* right container */}
             <div className="w-1/2 pr-4 xl:pr-14">
@@ -81,7 +82,6 @@ class Assets extends Component {
         </div>
         <AssetsItems />
         <AssetsMap />
-        <AssetsRecommendation />
         <AssetsAdd />
         <Footer />
       </div>
