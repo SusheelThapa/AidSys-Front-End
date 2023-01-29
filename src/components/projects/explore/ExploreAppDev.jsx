@@ -32,10 +32,11 @@ function ExploreAppDev({ appdev }) {
               disableOnInteraction: false,
             }}
           >
-            {appdev.map((project) => {
+            {appdev.map((project,index) => {
               return (
                 <SwiperSlide key={project._id}>
-                  <NotAvailableProjects project={project} />
+                  <NotAvailableProjects project={project}   index={index}
+                    type={"appdev"}/>
                 </SwiperSlide>
               );
             })}

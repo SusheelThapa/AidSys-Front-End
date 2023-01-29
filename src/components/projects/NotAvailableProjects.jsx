@@ -1,14 +1,102 @@
 import React from "react";
+
+import Green from "../../assets/img/green.png";
 import Red from "../../assets/img/red.png";
 import Person from "../../assets/img/round-person.png";
 import laptop from "../../assets/img/laptop3.png";
 
-function NotAvailableProjects({ project }) {
+import webdevone from "../../assets/img/web-dev-one.jpg";
+import webdevtwo from "../../assets/img/web-dev-two.jpg";
+import webdevthree from "../../assets/img/web-dev-three.jpg";
+
+import appdevone from "../../assets/img/app-dev-one.jpg";
+import appdevtwo from "../../assets/img/app-dev-two.jpg";
+import appdevthree from "../../assets/img/app-dev-three.jpg";
+
+import dsone from "../../assets/img/data-science-one.jpg";
+import dstwo from "../../assets/img/data-science-two.jpg";
+import dsthree from "../../assets/img/data-science-three.jpg";
+
+import aione from "../../assets/img/AI-one.jpg";
+import aitwo from "../../assets/img/AI-two.jpg";
+import aithree from "../../assets/img/AI-three.jpg";
+
+import otherone from "../../assets/img/other-one.jpg";
+import othertwo from "../../assets/img/other-two.jpg";
+import otherthree from "../../assets/img/other-three.jpg";
+
+function NotAvailableProjects({ project, type, index, active }) {
+  const projectActive = () => {
+    return active === true ? Green : Red;
+  };
+  const getImageSrc = () => {
+    if (type === "webdev") {
+      switch (index % 3) {
+        case 0:
+          return webdevone;
+        case 1:
+          return webdevtwo;
+        case 2:
+          return webdevthree;
+        default:
+          return laptop;
+      }
+    } else if (type === "appdev") {
+      switch (index % 3) {
+        case 0:
+          return appdevone;
+        case 1:
+          return appdevtwo;
+        case 2:
+          return appdevthree;
+        default:
+          return laptop;
+      }
+    } else if (type === "ds") {
+      switch (index % 3) {
+        case 0:
+          return dsone;
+        case 1:
+          return dstwo;
+        case 2:
+          return dsthree;
+        default:
+          return laptop;
+      }
+    } else if (type === "other") {
+      switch (index % 3) {
+        case 0:
+          return otherone;
+        case 1:
+          return othertwo;
+        case 2:
+          return otherthree;
+        default:
+          return laptop;
+      }
+    } else if (type === "ai") {
+      switch (index % 3) {
+        case 0:
+          return aione;
+        case 1:
+          return aitwo;
+        case 2:
+          return aithree;
+        default:
+          return laptop;
+      }
+    }
+    return laptop;
+  };
   return (
     <div className="m-2">
       <div className="flex flex-col rounded-xl bg-white shadow-lg w-[370px] border">
         <div className="relative">
-          <img className="rounded-t-xl" src={laptop} alt="classroom" />
+          <img
+            className="rounded-t-xl h-64 w-full"
+            src={getImageSrc()}
+            alt="classroom"
+          />
           <img className="absolute w-10 right-2 top-2" src={Red} alt="green" />
         </div>
         {/* div for overall bottom content */}

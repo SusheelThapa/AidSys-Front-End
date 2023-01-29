@@ -32,10 +32,14 @@ function ExploreAR({ ai }) {
               reverseDirection: true,
             }}
           >
-            {ai.map((project) => {
+            {ai.map((project, index) => {
               return (
                 <SwiperSlide key={project._id}>
-                  <NotAvailableProjects project={project} />
+                  <NotAvailableProjects
+                    project={project}
+                    index={index}
+                    type={"ai"}
+                  />
                 </SwiperSlide>
               );
             })}
