@@ -34,7 +34,12 @@ function ExploreDS({ ds }) {
             {ds.map((project, index) => {
               return (
                 <SwiperSlide key={project._id}>
-                  <NotAvailableProjects project={project} />
+                  <NotAvailableProjects
+                    project={project}
+                    index={index}
+                    type={"ds"}
+                    active={false}
+                  />
                 </SwiperSlide>
               );
             })}

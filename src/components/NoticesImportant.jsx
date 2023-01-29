@@ -2,11 +2,7 @@ import React from "react";
 import noticesOne from "../assets/img/notices1.png";
 import noticesTwo from "../assets/img/notices2.png";
 import noticesThree from "../assets/img/notices3.png";
-import {
-  BsChevronCompactLeft,
-  BsChevronCompactRight,
-  BsFileSlides,
-} from "react-icons/bs";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { useState } from "react";
 
 function NoticesImportant() {
@@ -49,7 +45,7 @@ function NoticesImportant() {
   ];
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? 2 : currentIndex-1;
+    const newIndex = isFirstSlide ? 2 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const nextSlide = () => {
@@ -79,7 +75,9 @@ function NoticesImportant() {
               <p className="text-sm text-gray-500">Date: Date</p>
               <p className="text-sm text-gray-500">Someone from the office</p>
             </div>
-            <p className="text-sm mt-3">{sliderParagraph[currentIndex].paragraph}</p>
+            <p className="text-sm mt-3">
+              {sliderParagraph[currentIndex].paragraph}
+            </p>
             <div className="flex justify-end mt-4">
               <button className="font-bold hover:scale-110 duration-200 text-assets-100 underline hover:text-indigo-400">
                 Learn more

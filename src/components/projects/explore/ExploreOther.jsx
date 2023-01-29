@@ -32,10 +32,15 @@ function ExploreOther({ other }) {
               reverseDirection: true,
             }}
           >
-            {other.map((project) => {
+            {other.map((project, index) => {
               return (
                 <SwiperSlide key={project._id}>
-                  <NotAvailableProjects project={project} />
+                  <NotAvailableProjects
+                    project={project}
+                    index={index}
+                    type={"other"}
+                    active={true}
+                  />
                 </SwiperSlide>
               );
             })}

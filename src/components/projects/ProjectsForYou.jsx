@@ -1,6 +1,5 @@
 import React from "react";
 
-import AvailableProjects from "./AvailableProjects";
 import ExploreWebDev from "./explore/ExploreWebDev";
 import ExploreAppDev from "./explore/ExploreAppDev";
 import ExploreAR from "./explore/ExploreAR";
@@ -16,6 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ExploreOther from "./explore/ExploreOther";
+import NotAvailableProjects from "./NotAvailableProjects";
 
 function ProjectsForYou({
   onClickAddProject,
@@ -48,12 +48,15 @@ function ProjectsForYou({
             reverseDirection: true,
           }}
         >
-          {yourProject.map((project) => {
+          {yourProject.map((project, index) => {
             return (
               <SwiperSlide key={project._id}>
-                <AvailableProjects
+                <NotAvailableProjects
                   className="m-11"
                   project={project}
+                  type={"other"}
+                  index={index}
+                  active={true}
                 />
               </SwiperSlide>
             );

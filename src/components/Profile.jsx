@@ -12,7 +12,6 @@ class Profile extends Component {
     getStudentDetail(window.location.pathname.split("/")[1]).then((student) => {
       this.setState({ student });
 
-      console.log(student);
     });
   }
 
