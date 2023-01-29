@@ -33,7 +33,6 @@ class Projects extends Component {
   handleAddProject = async (project) => {
     project.owner = this.state.student._id;
 
-    console.log(project);
     addProject(project).then((res) => {
       window.location.reload();
     });
@@ -68,7 +67,6 @@ class Projects extends Component {
 
     if (student) {
       yourProject = student.projects;
-      console.log(yourProject);
     }
     return this.state.student ? (
       <React.Fragment>
