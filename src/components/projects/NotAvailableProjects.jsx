@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Green from "../../assets/img/green.png";
 import Red from "../../assets/img/red.png";
@@ -26,6 +27,10 @@ import othertwo from "../../assets/img/other-two.jpg";
 import otherthree from "../../assets/img/other-three.jpg";
 
 function NotAvailableProjects({ project, type, index, active }) {
+  const handleViewProject = (link) => {
+    window.location.href = link;
+  };
+
   const projectActive = () => {
     return active === true ? Green : Red;
   };
@@ -97,7 +102,11 @@ function NotAvailableProjects({ project, type, index, active }) {
             src={getImageSrc()}
             alt="classroom"
           />
-          <img className="absolute w-10 right-2 top-2" src={Red} alt="green" />
+          <img
+            className="absolute w-10 right-2 top-2"
+            src={projectActive()}
+            alt="green"
+          />
         </div>
         {/* div for overall bottom content */}
         <div className="flex flex-col p-3">
@@ -117,13 +126,23 @@ function NotAvailableProjects({ project, type, index, active }) {
           <hr />
           {/* div for buttons */}
           <div className="flex justify-between mt-4">
-            <p
-              type="button"
-              className="font-bold text-sm underline text-indigo-300 cursor-not-allowed"
+            <button
+              className={
+                (active === true ? "" : "cursor-not-allowed ") +
+                "font-bold text-sm text-assets-100 underline hover:text-indigo-400"
+              }
             >
-              Apply for collab
-            </p>
-            <button className="font-bold text-sm text-assets-100 underline hover:text-indigo-400">
+              <Link to={`/projects/${project._id}`}>Apply for collab</Link>
+            </button>
+            <button
+              onClick={() => {
+                handleViewProject(project.link);
+              }}
+              className={
+                (active === true ? "" : "cursor-not-allowed ") +
+                "font-bold text-sm text-assets-100 underline hover:text-indigo-400"
+              }
+            >
               View Project
             </button>
           </div>

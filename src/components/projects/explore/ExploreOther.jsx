@@ -39,6 +39,7 @@ function ExploreOther({ other }) {
                     project={project}
                     index={index}
                     type={"other"}
+                    active={true}
                   />
                 </SwiperSlide>
               );

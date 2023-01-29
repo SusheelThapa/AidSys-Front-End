@@ -38,6 +38,7 @@ function ExploreDS({ ds }) {
                     project={project}
                     index={index}
                     type={"ds"}
+                    active={false}
                   />
                 </SwiperSlide>
               );
