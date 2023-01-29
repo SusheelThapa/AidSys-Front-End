@@ -14,15 +14,17 @@ function AssetBookingRating({ bookings }) {
           {/*div for booking name  */}
           <div className="flex flex-col space-y-4 p-4 xl:p-40 rounded-xl border shadow-lg mt-8">
             {bookings.map((booking) => {
-              const { bookedData } = booking;
+              const { bookedDate } = booking;
               const { name } = booking.studentID;
 
-              const date = new Date(bookedData);
+              const date = new Date(bookedDate);
 
               return (
                 <div className="flex justify-between hover:shadow-2xl h-20 p-4">
                   <p className="text-2xl text-gray-500">1. {name}</p>
-                  <p className="text-2xl text-gray-500">Date: {date.toDateString()}</p>
+                  <p className="text-2xl text-gray-500">
+                    Date: {date.toDateString()}
+                  </p>
                 </div>
               );
             })}
