@@ -1,6 +1,6 @@
 # AidSys-Front-End
 
-**AisSys** is our project which basically takes any institution and all of its assets to cloud.
+**AidSys** is our project which basically takes any institution and all of its assets to cloud.
 Its digitizing the entire institution to reduce the operation cost and h
 ence enabling one-and-all present in the institution to make optimum use of the available resources.
 
@@ -13,7 +13,7 @@ ence enabling one-and-all present in the institution to make optimum use of the 
 
    1. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Code Formatter
    2. [Auto import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport): For updating import statement
-   3. [ESLing](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+   3. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
    4. [Simple React Snippets](https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets)
 
 ## Setting up Backend
